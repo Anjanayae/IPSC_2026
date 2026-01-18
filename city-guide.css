@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #b3d9e8;
+  padding: 1.5rem 0;
+}
+
+.navbar {
+display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 3rem;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navlinks a:hover {
+  color: #0066cc;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* City Guide Page */
+.city-guide-main {
+  background: #fff;
+  position: relative;
+}
+
+.city-guide-hero {
+  background: url('https://imageio.forbes.com/blogs-images/billretherford/files/2018/01/PIA12114_web_1024.jpg?height=288&width=711&fit=bounds') center/cover;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-guide-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.city-guide-hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.city-guide-hero h2 {
+  font-size: 1.8rem;
+  color: #87ceeb;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.city-guide-content {
+  padding: 3rem 2rem;
+}
+
+.intro-section {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: #f5f5f5;
+  border-left: 4px solid #4a90e2;
+  border-radius: 4px;
+}
+
+.intro-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+.attractions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.attraction-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.attraction-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #e0e0e0;
+}
+
+.attraction-card h3 {
+  font-size: 1.3rem;
+  color: #0066cc;
+  padding: 1.5rem 1rem 0.5rem;
+  font-weight: 600;
+}
+
+.attraction-card p {
+  padding: 0 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.local-attractions-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.local-attractions-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #4a90e2;
+  padding-bottom: 0.5rem;
+}
+
+.attractions-list {
+  list-style: none;
+}
+
+.attractions-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1.8;
+}
+
+.attractions-list li:last-child {
+  border-bottom: none;
+}
+
+.attractions-list strong {
+  color: #0066cc;
+  font-weight: 600;
+}

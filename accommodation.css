@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #b3d9e8;
+  padding: 1.5rem 0;
+}
+
+.navbar {
+display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 3rem;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navlinks a:hover {
+  color: #0066cc;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Accommodation Page */
+.accommodation-main {
+  background: #fff;
+  position: relative;
+}
+
+.accommodation-hero {
+  background: url('https://imageio.forbes.com/blogs-images/billretherford/files/2018/01/PIA12114_web_1024.jpg?height=288&width=711&fit=bounds') center/cover;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accommodation-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.accommodation-hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.accommodation-hero h2 {
+  font-size: 1.8rem;
+  color: #87ceeb;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.accommodation-content {
+  padding: 3rem 2rem;
+}
+
+.accommodation-section {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.accommodation-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #4a90e2;
+  padding-bottom: 0.5rem;
+}
+
+.accommodation-section > p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.accommodation-section a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.accommodation-section a:hover {
+  text-decoration: underline;
+}
+
+.accommodation-card {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-left: 4px solid #4a90e2;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+.accommodation-card h3 {
+  font-size: 1.4rem;
+  color: #0066cc;
+  margin-bottom: 1rem;
+}
+
+.accommodation-card p {
+  margin-bottom: 1rem;
+}
+
+.room-details {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.room-details p {
+  margin-bottom: 0.75rem;
+}
+
+.pickup-point {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pickup-point h3 {
+  font-size: 1.3rem;
+  color: #0066cc;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hotel-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.hotel-table thead {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.hotel-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid #4a90e2;
+}
+
+.hotel-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background: #f5f9fc;
+}
+
+.hotel-table tr:hover td {
+  background: #e8f4f8;
+}
+
+.hotel-table tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+.hotel-table tr:nth-child(even):hover td {
+  background: #e8f4f8;
+}
+
+.hotel-note {
+  background: #fff3cd;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid #ffc107;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  color: #856404;
+  margin-top: -0.75rem;
+  margin-bottom: 1rem;
+}

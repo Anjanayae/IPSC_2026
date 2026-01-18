@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #b3d9e8;
+  padding: 1.5rem 0;
+}
+
+.navbar {
+display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 3rem;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navlinks a:hover {
+  color: #0066cc;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.btn-black-white {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Constitution Page */
+.constitution-main {
+  background: url('https://imageio.forbes.com/blogs-images/billretherford/files/2018/01/PIA12114_web_1024.jpg?height=288&width=711&fit=bounds') center/cover fixed;
+  position: relative;
+  min-height: 100vh;
+}
+
+.constitution-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.constitution-hero {
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.constitution-hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.constitution-hero h2 {
+  font-size: 1.8rem;
+  color: #87ceeb;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+.constitution-content {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.constitution-box {
+  background: rgba(0, 0, 0, 0.85);
+  border-left: 4px solid #4a90e2;
+  padding: 2rem;
+  max-width: 800px;
+  border-radius: 4px;
+}
+
+.constitution-box ol {
+  list-style-position: inside;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.constitution-box ol li {
+  margin-bottom: 1.5rem;
+}
+
+.constitution-box strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.constitution-box ul {
+  list-style-position: inside;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+
+.constitution-box ul li {
+  color: #87ceeb;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.constitution-box ul li a {
+  color: #87ceeb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.constitution-box ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}

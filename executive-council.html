@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Executive Council – IPSA</title>
+  <link rel="stylesheet" href="executive-council.css">
+  <script src="person-card.js"></script>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="assets/logo.png" class="logo">
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="constitution.html">Constitution</a></li>
+      <li><a href="executive-council.html">Executive Council</a></li>
+      <li class="dropdown">
+        <a href="events.html" class="dropdown-toggle">Events</a>
+        <div class="dropdown-menu">
+          <a href="events.html?event=ipsc-2025">IPSC 2025</a>
+          <a href="events.html?event=general-body-meeting">General Body Meeting</a>
+          <a href="events.html?event=ipsc-2024">IPSC 2024</a>
+          <a href="events.html?event=ipsc-2023">IPSC 2023</a>
+          <a href="events.html?event=workshops">Workshops</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Other Info</a>
+        <div class="dropdown-menu">
+          <a href="city-guide.html">City Guide</a>
+          <a href="nearby-attractions.html">Nearby Attractions</a>
+          <a href="travel.html">Travel</a>
+          <a href="accommodation.html">Accommodation</a>
+          <a href="outreach.html">Outreach</a>
+          <a href="contacts.html">Contact</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="council-hero">
+    <h1>Executive Council</h1>
+  </div>
+
+  <div class="council-section">
+    <h2>President</h2>
+    <div class="person-cards" id="president-container"></div>
+  </div>
+
+  <div class="council-section">
+    <h2>Vice President</h2>
+    <div class="person-cards" id="vice-president-container"></div>
+  </div>
+
+  <div class="council-section">
+    <h2>General Secretary</h2>
+    <div class="person-cards" id="general-secretary-container"></div>
+  </div>
+
+  <div class="council-section">
+    <h2>Other Members</h2>
+    <div class="person-cards" id="other-members-container"></div>
+  </div>
+</main>
+
+<footer>
+  <p>Maintained by Web Team @ IPSA</p>
+</footer>
+
+<script>
+  // President
+  PersonCard.renderMultiple([
+    {
+      name: 'Dr. IDK',
+      title: 'President',
+      affiliation: 'IITI'
+    }
+  ], 'president-container');
+
+  // Vice President
+  PersonCard.renderMultiple([
+    {
+      name: 'Dr. XYZ',
+      title: 'Vice President',
+      affiliation: 'Institute Name'
+    }
+  ], 'vice-president-container');
+
+  // General Secretary
+  PersonCard.renderMultiple([
+    {
+      name: 'Dr. ABC',
+      title: 'General Secretary',
+      affiliation: 'Institute Name'
+    }
+  ], 'general-secretary-container');
+
+  // Other Members
+  PersonCard.renderMultiple([
+    { name: 'Dr. Member 1', title: 'Chair', affiliation: 'Institute' },
+    { name: 'Dr. Member 2', title: 'Co-Chair', affiliation: 'Institute' },
+    { name: 'Dr. Member 3', title: 'Member', affiliation: 'Institute' }
+  ], 'other-members-container');
+</script>
+
+</body>
+</html>
