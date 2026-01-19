@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Executive Council – IPSA</title>
+  <title>Detailed Program Schedule – IPSC 2026</title>
   <link rel="stylesheet" href="shared-styles.css">
-  <link rel="stylesheet" href="executive-council-enhanced.css">
+  <link rel="stylesheet" href="program-enhanced.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="person-card.js"></script>
 </head>
 <body>
 
@@ -52,80 +51,39 @@
       </li>
     </ul>
     <a href="registration.html" class="registration-btn">Registration</a>
-    </ul>
-    <a href="registration.html" class="registration-btn">Registration</a>
   </nav>
 </header>
 
-<main>
-  <div class="council-hero">
-    <h1>Executive Council</h1>
+<main class="program-main">
+  <div class="program-hero">
+    <h1>Detailed Program Schedule</h1>
+    <h2>Complete Conference Itinerary</h2>
   </div>
 
-  <div class="council-section">
-    <h2>President</h2>
-    <div class="person-cards" id="president-container"></div>
-  </div>
-
-  <div class="council-section">
-    <h2>Vice President</h2>
-    <div class="person-cards" id="vice-president-container"></div>
-  </div>
-
-  <div class="council-section">
-    <h2>General Secretary</h2>
-    <div class="person-cards" id="general-secretary-container"></div>
-  </div>
-
-  <div class="council-section">
-    <h2>Other Members</h2>
-    <div class="person-cards" id="other-members-container"></div>
+  <div class="program-content">
+    <p class="program-description">
+      The detailed day-by-day program schedule for IPSC 2026, including session times, venues, speakers, and topics.
+    </p>
+    <div class="tbd-card">
+      <div class="tbd-icon">
+        <i class="fas fa-list-check"></i>
+      </div>
+      <div class="tbd-content">
+        <h2>Coming Soon</h2>
+        <p>Detailed program schedule will be updated soon. Please check back later.</p>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer>
   <div class="footer-content">
-    <p><i class="fas fa-code"></i> Maintained by Web Team @ DAASE</p>
+    <p>&copy; 2026 IPSC. All rights reserved.</p>
+    <p>Contact us for more information.</p>
   </div>
 </footer>
 
 <script src="particles.js"></script>
-
-<script>
-  // President
-  PersonCard.renderMultiple([
-    {
-      name: 'Dr. IDK',
-      title: 'President',
-      affiliation: 'IITI'
-    }
-  ], 'president-container');
-
-  // Vice President
-  PersonCard.renderMultiple([
-    {
-      name: 'Dr. XYZ',
-      title: 'Vice President',
-      affiliation: 'Institute Name'
-    }
-  ], 'vice-president-container');
-
-  // General Secretary
-  PersonCard.renderMultiple([
-    {
-      name: 'Dr. ABC',
-      title: 'General Secretary',
-      affiliation: 'Institute Name'
-    }
-  ], 'general-secretary-container');
-
-  // Other Members
-  PersonCard.renderMultiple([
-    { name: 'Dr. Member 1', title: 'Chair', affiliation: 'Institute' },
-    { name: 'Dr. Member 2', title: 'Co-Chair', affiliation: 'Institute' },
-    { name: 'Dr. Member 3', title: 'Member', affiliation: 'Institute' }
-  ], 'other-members-container');
-</script>
 
 </body>
 </html>

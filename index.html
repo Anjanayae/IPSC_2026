@@ -10,12 +10,22 @@ This<!DOCTYPE html>
 
 <header>
   <nav class="navbar">
-    <img src="assets/logo.png" class="logo">
+    <div class="navbar-logo-group">
+      <img src="assets/iit_indore.svg" class="iit-logo">
+      <img src="assets/logo.png" class="logo">
+    </div>
     <ul class="navlinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="membership.html">Membership</a></li>
       <li><a href="constitution.html">Constitution</a></li>
-      <li><a href="executive-council.html">Executive Council</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Programme</a>
+        <div class="dropdown-menu">
+          <a href="keynote-speakers.html">Keynote Speakers</a>
+          <a href="program-glance.html">Program at a Glance</a>
+          <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
+        </div>
+      </li>
       <li class="dropdown">
         <a href="events.html" class="dropdown-toggle">Events</a>
         <div class="dropdown-menu">
@@ -26,6 +36,7 @@ This<!DOCTYPE html>
           <a href="events.html?event=workshops">Workshops</a>
         </div>
       </li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">Other Info</a>
         <div class="dropdown-menu">
@@ -38,6 +49,7 @@ This<!DOCTYPE html>
         </div>
       </li>
     </ul>
+    <a href="registration.html" class="registration-btn">Registration</a>
   </nav>
 </header>
 
@@ -54,26 +66,12 @@ This<!DOCTYPE html>
       <div class="stars"></div>
     </div>
     <div class="hero-content">
-      <div class="badge">🌟 7th Edition</div>
       <h1 class="hero-title">
         <span class="gradient-text">Welcome to</span><br>
         <span class="main-title">IPSC 2026</span>
       </h1>
       <h2 class="subtitle">The Seventh Indian Planetary Science Conference</h2>
-      <div class="hero-details">
-        <div class="detail-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>IIT Indore</span>
-        </div>
-        <div class="detail-item">
-          <i class="fas fa-calendar-alt"></i>
-          <span>2026</span>
-        </div>
-        <div class="detail-item">
-          <i class="fas fa-users"></i>
-          <span>Global Scientists</span>
-        </div>
-      </div>
+      <p class="hosted-by">Hosted by Department of Astronomy, Astrophysics and Space Engineering, IIT Indore, 2026</p>
       <p class="highlight"><i class="fas fa-rocket"></i> Organized along with S2:STEP2026</p>
       <p class="theme">Theme: <span class="theme-text">"Planetary Sciences and Exploration"</span></p>
       <div class="cta-buttons">

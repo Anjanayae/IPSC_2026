@@ -1,0 +1,469 @@
+@import url('shared-styles.css');
+
+/* Registration Page Specific Styling */
+.registration-hero {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+  padding: 6rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.registration-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.registration-hero h1 {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.registration-hero h2 {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.registration-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.registration-section {
+  margin: 4rem 0;
+}
+
+.registration-section h2 {
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+  font-family: 'Space Grotesk', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.registration-section h2::before {
+  content: '📋';
+  font-size: 2rem;
+}
+
+/* Info Cards */
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--nebula-pink);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+}
+
+.info-card p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+.info-card strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* Note Card */
+.note-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(244, 114, 182, 0.1) 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 2px solid rgba(244, 114, 182, 0.4);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--nebula-pink);
+}
+
+.note-card h3 {
+  color: var(--nebula-pink);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.note-card h3::before {
+  content: '⚠️';
+}
+
+.note-card p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0.8rem 0;
+}
+
+.note-card strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* Status Card */
+.status-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--danger);
+}
+
+.status-card h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.status-card h3::before {
+  content: '🔔';
+}
+
+.status-card p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0.8rem 0;
+}
+
+.status-closed {
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* Fee Table */
+.fee-table-container {
+  margin: 2rem 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.registration-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.registration-table thead {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.registration-table th {
+  color: white;
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.registration-table td {
+  color: #cbd5e1;
+  padding: 1.2rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  font-size: 1rem;
+}
+
+.registration-table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.registration-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Fee Note */
+.fee-note {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid var(--success);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.fee-note p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.fee-note strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* Payment Info */
+.payment-info {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  margin-bottom: 2rem;
+}
+
+.payment-info h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.payment-info p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Payment Modes */
+.payment-mode {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.payment-mode:hover {
+  border-color: var(--nebula-pink);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+  transform: translateY(-3px);
+}
+
+.mode-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+}
+
+.mode-header h3 {
+  color: var(--nebula-pink);
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 700;
+  flex: 1;
+}
+
+.mode-icon {
+  font-size: 2rem;
+}
+
+.mode-content {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.mode-content p {
+  margin-bottom: 1rem;
+}
+
+.mode-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-content li {
+  margin-bottom: 0.8rem;
+  color: #cbd5e1;
+}
+
+.mode-content li::marker {
+  color: var(--nebula-pink);
+  font-weight: 700;
+}
+
+.qr-placeholder {
+  background: rgba(99, 102, 241, 0.1);
+  border: 2px dashed rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.qr-placeholder p {
+  color: #a5b4fc;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Bank Details */
+.bank-details {
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  align-items: center;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+/* Footer */
+footer {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 3rem 2rem;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.footer-content p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .registration-hero {
+    padding: 3rem 1rem;
+  }
+
+  .registration-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .registration-hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .registration-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .detail-label {
+    font-size: 0.85rem;
+  }
+
+  .mode-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mode-icon {
+    align-self: flex-end;
+  }
+
+  .info-card,
+  .note-card,
+  .status-card,
+  .payment-info,
+  .payment-mode {
+    padding: 1.5rem;
+  }
+
+  .registration-table th,
+  .registration-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .registration-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .registration-content {
+    padding: 0 1rem;
+  }
+
+  .mode-content ol {
+    margin-left: 1rem;
+  }
+
+  .registration-table {
+    font-size: 0.85rem;
+  }
+}

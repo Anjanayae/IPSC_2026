@@ -1,0 +1,261 @@
+@import url('shared-styles.css');
+
+/* Program Pages Styling (Program at a Glance & Detailed Program Schedule) */
+.program-hero {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+  padding: 6rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.program-hero h1 {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.program-hero h2 {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.program-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tbd-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  border: 2px dashed rgba(99, 102, 241, 0.4);
+  text-align: center;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.tbd-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: drift 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+.tbd-icon {
+  font-size: 4rem;
+  color: var(--nebula-pink);
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.tbd-content h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.tbd-content p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  font-style: italic;
+}
+
+.tbd-card:hover {
+  transform: scale(1.02);
+  border-color: var(--nebula-pink);
+  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+}
+
+.program-description {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  text-align: center;
+  margin: 2rem 0 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Schedule Grid (for future use) */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.schedule-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--nebula-pink);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+}
+
+.time-badge {
+  background: linear-gradient(135deg, var(--cosmic-indigo) 0%, var(--cosmic-purple) 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.schedule-item h3 {
+  color: var(--nebula-pink);
+  margin: 1rem 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.schedule-item p {
+  color: #a5b4fc;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 3rem 2rem;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.footer-content p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .program-hero {
+    padding: 3rem 1rem;
+  }
+
+  .program-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .program-hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .tbd-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .tbd-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .tbd-icon {
+    font-size: 3rem;
+  }
+
+  .program-content {
+    padding: 0 1rem;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .program-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .program-hero h2 {
+    font-size: 1rem;
+  }
+
+  .tbd-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .tbd-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .tbd-icon {
+    font-size: 2.5rem;
+  }
+
+  .program-description {
+    font-size: 0.95rem;
+  }
+}

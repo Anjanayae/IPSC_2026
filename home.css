@@ -64,9 +64,24 @@ header {
   justify-content: space-between;
 }
 
+.navbar-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-right: 2rem;
+}
+
+.iit-logo {
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.iit-logo:hover {
+  transform: scale(1.05);
+}
+
 .logo {
   height: 60px;
-  margin-right: 3rem;
   transition: transform 0.3s ease;
 }
 
@@ -513,6 +528,17 @@ footer {
   animation: fadeInUp 0.8s ease-out 0.3s both;
   position: relative;
   z-index: 2;
+}
+
+.hosted-by {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #a5b4fc;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.3px;
 }
 
 .hero-details {
