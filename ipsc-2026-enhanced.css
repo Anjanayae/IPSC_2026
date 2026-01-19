@@ -48,13 +48,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.section h2::before {
-  content: '💰';
-  font-size: 2rem;
-}
-
+}      
 .section ul {
   list-style: none;
   padding: 0;
@@ -76,7 +70,6 @@
 }
 
 .section ul li::before {
-  content: '✓';
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   width: 30px;
   height: 30px;

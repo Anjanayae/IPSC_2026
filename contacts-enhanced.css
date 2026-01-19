@@ -74,15 +74,6 @@
   gap: 0.5rem;
 }
 
-.contact-methods a::before {
-  content: '✉';
-  font-size: 1.2rem;
-}
-
-.contact-methods a[href^="tel"]::before {
-  content: '📞';
-}
-
 .contact-methods a:hover {
   color: var(--nebula-pink);
   transform: translateX(5px);

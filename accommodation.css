@@ -84,7 +84,6 @@ header {
 }
 
 .navlinks a::after {
-  content: '';
   position: absolute;
   bottom: -5px;
   left: 0;

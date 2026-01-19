@@ -13,7 +13,6 @@
 }
 
 .registration-hero::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -65,11 +64,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.registration-section h2::before {
-  content: '📋';
-  font-size: 2rem;
 }
 
 /* Info Cards */
@@ -125,10 +119,6 @@
   gap: 0.7rem;
 }
 
-.note-card h3::before {
-  content: '⚠️';
-}
-
 .note-card p {
   color: #cbd5e1;
   font-size: 1.05rem;
@@ -159,10 +149,6 @@
   display: flex;
   align-items: center;
   gap: 0.7rem;
-}
-
-.status-card h3::before {
-  content: '🔔';
 }
 
 .status-card p {

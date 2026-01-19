@@ -100,7 +100,6 @@
 }
 
 .membership-link a::after {
-  content: '→';
   font-size: 1.3rem;
   transition: transform 0.3s ease;
 }

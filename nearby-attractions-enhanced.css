@@ -64,7 +64,6 @@
 }
 
 .attraction-item h3::before {
-  content: '📍';
   font-size: 1.5rem;
 }
 

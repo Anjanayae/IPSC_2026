@@ -56,7 +56,6 @@
 }
 
 .event-link::after {
-  content: '→';
   font-size: 1.8rem;
   color: var(--nebula-pink);
   transition: transform 0.3s ease;
@@ -67,7 +66,6 @@
 }
 
 .event-link::before {
-  content: '📅';
   margin-right: 1rem;
   font-size: 2rem;
 }
