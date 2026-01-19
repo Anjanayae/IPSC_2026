@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+This<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>IPSC 2025 – Indian Planetary Science Conference</title>
+  <title>IPSC 2026 – Indian Planetary Science Conference</title>
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -40,36 +42,193 @@
 </header>
 
 <main class="home-main">
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
+  
   <!-- Hero Section -->
   <div class="hero">
-    <h1>Welcome to IPSC 2026</h1>
-    <h2 class="subtitle">The Seventh Indian Planetary Science Conference</h2>
-    <p class="highlight">will be organized along with S2:STEP2026 at IIT Indore</p>
-    <p class="theme">under the theme <span class="theme-text">"Planetary Sciences and Exploration"</span></p>
+    <div class="hero-background">
+      <div class="planet planet-1"></div>
+      <div class="planet planet-2"></div>
+      <div class="planet planet-3"></div>
+      <div class="stars"></div>
+    </div>
+    <div class="hero-content">
+      <div class="badge">🌟 7th Edition</div>
+      <h1 class="hero-title">
+        <span class="gradient-text">Welcome to</span><br>
+        <span class="main-title">IPSC 2026</span>
+      </h1>
+      <h2 class="subtitle">The Seventh Indian Planetary Science Conference</h2>
+      <div class="hero-details">
+        <div class="detail-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>IIT Indore</span>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-calendar-alt"></i>
+          <span>2026</span>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-users"></i>
+          <span>Global Scientists</span>
+        </div>
+      </div>
+      <p class="highlight"><i class="fas fa-rocket"></i> Organized along with S2:STEP2026</p>
+      <p class="theme">Theme: <span class="theme-text">"Planetary Sciences and Exploration"</span></p>
+      <div class="cta-buttons">
+        <a href="#about" class="btn-primary"><i class="fas fa-info-circle"></i> Learn More</a>
+        <a href="/" class="btn-secondary"><i class="fas fa-external-link-alt"></i> Submit Abstract</a>
+      </div>
+    </div>
   </div>
 
   <!-- Main Content -->
-  <div class="content">
-    <p>
-      We are thrilled to announce that the Seventh <u>Indian Planetary Science Conference (IPSC-2026)</u> will be held in 2026 at the prestigious Centre for Space Science and Technology, Indian Institute of Technology Indore. This highly anticipated event, organized by the Indian Planetary Science Association (IPSA), marks the fourth IPSC conference hosted by IPSA, continuing our tradition of fostering collaboration and innovation in planetary science.
-    </p>
+  <div class="content" id="about">
+    <!-- Features Section -->
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-delay="0">
+        <div class="feature-icon">
+          <i class="fas fa-microscope"></i>
+        </div>
+        <h3>Research Excellence</h3>
+        <p>Leading scientists sharing groundbreaking discoveries in planetary science</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-delay="100">
+        <div class="feature-icon">
+          <i class="fas fa-globe-americas"></i>
+        </div>
+        <h3>Global Network</h3>
+        <p>Connect with researchers and enthusiasts from around the world</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-delay="200">
+        <div class="feature-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Innovation Hub</h3>
+        <p>Cutting-edge discussions on planetary exploration and technology</p>
+      </div>
+    </div>
 
-    <h2>About IPSC 2026</h2>
-    <p>
-      IPSC 2026 will unite leading scientists, researchers, and enthusiasts from around the globe to discuss the latest discoveries, research, and advancements in planetary science. The conference will feature keynote, invited and contributary talks, panel discussions, and poster presentations, covering a wide range of topics related to planetary science and exploration.
-    </p>
-    <p>
-      As it is concurrent with Space for Sustainability: Science, Technology, Education and Policy, IPSA 2026 will further expand the scope of discussions. Topics will include recent advances, results, and studies related to the atmosphere, surface, and interior of planetary bodies in the solar system, planetary processes, and early solar system evolution.
-    </p>
+    <!-- About Section -->
+    <div class="about-section">
+      <div class="section-header">
+        <span class="section-tag">About the Conference</span>
+        <h2>IPSC 2026</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="intro-text">
+            We are thrilled to announce that the Seventh <strong class="highlight-text">Indian Planetary Science Conference (IPSC-2026)</strong> will be held in 2026 at the prestigious Centre for Space Science and Technology, Indian Institute of Technology Indore.
+          </p>
+          <p>
+            This highly anticipated event, organized by the Indian Planetary Science Association (IPSA), marks the fourth IPSC conference hosted by IPSA, continuing our tradition of fostering collaboration and innovation in planetary science.
+          </p>
+        </div>
+        <div class="about-image">
+          <div class="image-placeholder">
+            <i class="fas fa-satellite"></i>
+            <p>Space Exploration</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <h2>For further details and Abstract submission, visit</h2>
-    <a href="/"><button class="btn-black-white">S2:STEP2025 & IPSC 2025 website</button></a>
+    <!-- Conference Highlights -->
+    <div class="highlights-section">
+      <div class="section-header">
+        <span class="section-tag">What to Expect</span>
+        <h2>Conference Highlights</h2>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-number">01</div>
+          <h3><i class="fas fa-microphone"></i> Keynote Sessions</h3>
+          <p>Inspiring talks from renowned scientists and thought leaders</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">02</div>
+          <h3><i class="fas fa-comments"></i> Panel Discussions</h3>
+          <p>Engage in collaborative discussions on cutting-edge topics</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">03</div>
+          <h3><i class="fas fa-chalkboard-teacher"></i> Poster Presentations</h3>
+          <p>Showcase your research and connect with peers</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">04</div>
+          <h3><i class="fas fa-network-wired"></i> Networking Events</h3>
+          <p>Build lasting connections with the global scientific community</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topics Section -->
+    <div class="topics-section">
+      <div class="section-header">
+        <span class="section-tag">Research Areas</span>
+        <h2>Key Topics</h2>
+      </div>
+      <div class="topics-grid">
+        <div class="topic-item">
+          <i class="fas fa-cloud"></i>
+          <span>Planetary Atmospheres</span>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-mountain"></i>
+          <span>Surface Geology</span>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-globe"></i>
+          <span>Interior Structure</span>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-meteor"></i>
+          <span>Planetary Processes</span>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-sun"></i>
+          <span>Solar System Evolution</span>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-rocket"></i>
+          <span>Space Exploration</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <div class="cta-content">
+        <h2><i class="fas fa-paper-plane"></i> Ready to Join Us?</h2>
+        <p>Submit your abstract and be part of this exciting scientific journey</p>
+        <a href="/" class="btn-large">
+          <span>Visit S2:STEP2026 & IPSC 2026 Website</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer>
-  <p>Maintained by Web Team @ DAASE</p>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>IPSC 2026</h3>
+      <p>Indian Planetary Science Conference</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-credit">Maintained by Web Team @ DAASE</p>
+  </div>
 </footer>
 
+<script src="particles.js"></script>
 </body>
 </html>

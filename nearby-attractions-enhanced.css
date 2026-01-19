@@ -1,0 +1,113 @@
+@import url('shared-styles.css');
+
+/* Nearby Attractions Page Specific Styling */
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+.attraction-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+}
+
+.attraction-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.attraction-item:hover::before {
+  transform: scaleX(1);
+}
+
+.attraction-item:hover {
+  transform: translateY(-10px);
+  border-color: var(--nebula-pink);
+  box-shadow: 0 25px 60px rgba(99, 102, 241, 0.4);
+}
+
+.attraction-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.attraction-item:hover img {
+  transform: scale(1.1);
+}
+
+.attraction-item h3 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 1.5rem 2rem 0.7rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.attraction-item h3::before {
+  content: '📍';
+  font-size: 1.5rem;
+}
+
+.attraction-item p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 0 2rem 2rem;
+  margin: 0;
+}
+
+/* Distance badges */
+.attraction-item h3::after {
+  content: attr(data-distance);
+  background: rgba(236, 72, 153, 0.2);
+  color: var(--nebula-pink);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+/* Intro Section */
+.intro-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.intro-section p {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,190 @@
+@import url('shared-styles.css');
+
+/* Travel Page Specific Styling */
+.info-section {
+  margin: 4rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.info-section:hover {
+  border-color: var(--nebula-pink);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+}
+
+.info-section h2 {
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-section h2::before {
+  content: '✈️';
+  font-size: 2rem;
+}
+
+.info-section:nth-child(2) h2::before {
+  content: '🗺️';
+}
+
+.info-section:nth-child(3) h2::before {
+  content: '🚌';
+}
+
+.info-section p {
+  color: #e2e8f0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.info-section em {
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+.info-section a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.info-section a:hover {
+  color: var(--nebula-pink);
+  border-bottom-color: var(--nebula-pink);
+}
+
+.route-card {
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 4px solid var(--nebula-pink);
+  transition: all 0.3s ease;
+}
+
+.route-card:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: translateX(10px);
+}
+
+.route-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.route-card h3::before {
+  content: '🚂';
+}
+
+.route-card:nth-child(even) h3::before {
+  content: '✈️';
+}
+
+.route-card p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.route-card strong {
+  color: var(--nebula-pink);
+}
+
+.route-card ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.route-card ul li {
+  color: #e2e8f0;
+  margin: 0.7rem 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.route-card ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--nebula-pink);
+  font-size: 1.2rem;
+}
+
+.note {
+  background: rgba(236, 72, 153, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--nebula-pink);
+  margin: 2rem 0;
+}
+
+.note strong {
+  color: white;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.contact-info h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.contact-info h3::before {
+  content: '📞';
+}
+
+.contact-info p {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-info strong {
+  color: var(--nebula-pink);
+  min-width: 120px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .route-card {
+    padding: 1.5rem;
+  }
+}

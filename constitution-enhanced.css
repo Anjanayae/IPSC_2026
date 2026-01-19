@@ -1,0 +1,92 @@
+@import url('shared-styles.css');
+
+/* Constitution Page Specific Styling */
+.constitution-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.constitution-box ol {
+  list-style: none;
+  counter-reset: main-counter;
+}
+
+.constitution-box ol > li {
+  counter-increment: main-counter;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.constitution-box ol > li::before {
+  content: counter(main-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.constitution-box strong {
+  color: var(--nebula-pink);
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.constitution-box ul {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+}
+
+.constitution-box ul li {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.constitution-box ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--nebula-pink);
+  font-size: 1.2rem;
+}
+
+.constitution-box a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.constitution-box a::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.constitution-box a:hover {
+  color: var(--nebula-pink);
+  transform: translateX(5px);
+}
+
+.constitution-box a:hover::after {
+  transform: translateX(5px);
+}
