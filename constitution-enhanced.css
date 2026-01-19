@@ -60,7 +60,6 @@
 }
 
 .constitution-box ul li::before {
-  content: '▸';
   position: absolute;
   left: 0;
   color: var(--nebula-pink);
@@ -78,7 +77,6 @@
 }
 
 .constitution-box a::after {
-  content: '→';
   transition: transform 0.3s ease;
 }
 

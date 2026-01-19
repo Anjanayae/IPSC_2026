@@ -70,12 +70,7 @@
   font-size: 2rem;
 }
 
-/* Icon variations */
-.event-item:nth-child(1) .event-link::before { content: '🎯'; }
-.event-item:nth-child(2) .event-link::before { content: '👥'; }
-.event-item:nth-child(3) .event-link::before { content: '🌟'; }
-.event-item:nth-child(4) .event-link::before { content: '🚀'; }
-.event-item:nth-child(5) .event-link::before { content: '🔬'; }
+
 
 /* Responsive */
 @media (max-width: 768px) {
