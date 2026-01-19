@@ -4,20 +4,52 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary-color: #8b5cf6;
+  --accent-color: #ec4899;
+  --light-bg: #f8fafc;
+  --darker-bg: #1e293b;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
-  color: #333;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: var(--text-dark);
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 header {
-  background: #b3d9e8;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   padding: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .navbar {
-display: flex;
+  display: flex;
   align-items: center;
   padding: 0 2rem;
   max-width: 1400px;
@@ -28,6 +60,11 @@ display: flex;
 .logo {
   height: 60px;
   margin-right: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .navlinks {
@@ -39,13 +76,30 @@ display: flex;
 
 .navlinks a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navlinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.navlinks a:hover::after {
+  width: 100%;
 }
 
 .navlinks a:hover {
-  color: #0066cc;
+  color: #fff;
 }
 
 /* Dropdown Menu */
@@ -62,10 +116,10 @@ display: flex;
   top: 100%;
   left: 0;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
   min-width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -74,6 +128,7 @@ display: flex;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   z-index: 1000;
   margin-top: 0.5rem;
+  backdrop-filter: blur(10px);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -85,9 +140,9 @@ display: flex;
 .dropdown-menu a {
   padding: 0.75rem 1rem;
   text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .dropdown-menu a:last-child {
@@ -95,9 +150,10 @@ display: flex;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f5f5f5;
-  color: #0066cc;
-  font-weight: 500;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding-left: 1.25rem;
 }
 
 main {
@@ -105,23 +161,36 @@ main {
   margin: auto;
 }
 
-footer{
-  background-color: black;
+footer {
+  background: linear-gradient(135deg, var(--darker-bg) 0%, #0f172a 100%);
   color: white;
   padding: 30px;
   text-align: center;
   margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.5s ease-out 0.3s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Accommodation Page */
 .accommodation-main {
-  background: #fff;
+  background: transparent;
   position: relative;
 }
 
 .accommodation-hero {
-  background: url('https://imageio.forbes.com/blogs-images/billretherford/files/2018/01/PIA12114_web_1024.jpg?height=288&width=711&fit=bounds') center/cover;
-  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 5rem 2rem;
   text-align: center;
   position: relative;
   min-height: 350px;
@@ -129,17 +198,21 @@ footer{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  margin: 2rem;
+  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+  animation: fadeInUp 0.8s ease-out;
 }
 
-.accommodation-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .accommodation-hero h1 {
@@ -147,20 +220,23 @@ footer{
   color: #fff;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
+  font-weight: 800;
 }
 
 .accommodation-hero h2 {
   font-size: 1.8rem;
-  color: #87ceeb;
+  color: #fff;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
 }
 
 .accommodation-content {
   padding: 3rem 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .accommodation-section {
@@ -170,71 +246,89 @@ footer{
 
 .accommodation-section h2 {
   font-size: 2rem;
-  color: #333;
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid #4a90e2;
+  border-bottom: 3px solid var(--primary-color);
   padding-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .accommodation-section > p {
   font-size: 1rem;
   line-height: 1.8;
-  color: #333;
+  color: var(--text-light);
   margin-bottom: 1.5rem;
 }
 
 .accommodation-section a {
-  color: #0066cc;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .accommodation-section a:hover {
+  color: var(--secondary-color);
   text-decoration: underline;
 }
 
 .accommodation-card {
-  background: #f9f9f9;
+  background: #fff;
   padding: 2rem;
-  border-left: 4px solid #4a90e2;
-  border-radius: 6px;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 12px;
   margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.accommodation-card:hover {
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
 }
 
 .accommodation-card h3 {
   font-size: 1.4rem;
-  color: #0066cc;
+  color: var(--primary-color);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .accommodation-card p {
   margin-bottom: 1rem;
+  color: var(--text-light);
 }
 
 .room-details {
-  background: #fff;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
   padding: 1.5rem;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-top: 1rem;
 }
 
 .room-details p {
   margin-bottom: 0.75rem;
+  color: var(--text-dark);
 }
 
 .pickup-point {
   background: #fff;
   padding: 2rem;
-  border-radius: 6px;
+  border-radius: 12px;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pickup-point:hover {
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
 }
 
 .pickup-point h3 {
   font-size: 1.3rem;
-  color: #0066cc;
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hotel-table {
@@ -242,10 +336,13 @@ footer{
   border-collapse: collapse;
   margin-bottom: 1rem;
   background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
 }
 
 .hotel-table thead {
-  background: #4a90e2;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: #fff;
 }
 
@@ -253,34 +350,27 @@ footer{
   padding: 1rem;
   text-align: left;
   font-weight: 600;
-  border: 1px solid #4a90e2;
+  border: none;
 }
 
 .hotel-table td {
   padding: 1rem;
-  border: 1px solid #ddd;
-  background: #f5f9fc;
+  border-bottom: 1px solid var(--border-color);
+  background: #fff;
+  transition: all 0.3s ease;
 }
 
-.hotel-table tr:hover td {
-  background: #e8f4f8;
-}
-
-.hotel-table tr:nth-child(even) td {
-  background: #fafafa;
-}
-
-.hotel-table tr:nth-child(even):hover td {
-  background: #e8f4f8;
+.hotel-table tbody tr:hover td {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
 }
 
 .hotel-note {
-  background: #fff3cd;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
   padding: 0.75rem 1rem;
-  border-left: 3px solid #ffc107;
-  border-radius: 3px;
+  border-left: 3px solid var(--warning);
+  border-radius: 8px;
   font-size: 0.95rem;
-  color: #856404;
+  color: #92400e;
   margin-top: -0.75rem;
   margin-bottom: 1rem;
 }

@@ -4,20 +4,52 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary-color: #8b5cf6;
+  --accent-color: #ec4899;
+  --light-bg: #f8fafc;
+  --darker-bg: #1e293b;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
-  color: #333;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: var(--text-dark);
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 header {
-  background: #b3d9e8;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   padding: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .navbar {
-display: flex;
+  display: flex;
   align-items: center;
   padding: 0 2rem;
   max-width: 1400px;
@@ -28,6 +60,11 @@ display: flex;
 .logo {
   height: 60px;
   margin-right: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .navlinks {
@@ -39,13 +76,30 @@ display: flex;
 
 .navlinks a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navlinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.navlinks a:hover::after {
+  width: 100%;
 }
 
 .navlinks a:hover {
-  color: #0066cc;
+  color: #fff;
 }
 
 /* Dropdown Menu */
@@ -62,10 +116,10 @@ display: flex;
   top: 100%;
   left: 0;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
   min-width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -74,6 +128,7 @@ display: flex;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   z-index: 1000;
   margin-top: 0.5rem;
+  backdrop-filter: blur(10px);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -85,9 +140,9 @@ display: flex;
 .dropdown-menu a {
   padding: 0.75rem 1rem;
   text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .dropdown-menu a:last-child {
@@ -95,9 +150,10 @@ display: flex;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f5f5f5;
-  color: #0066cc;
-  font-weight: 500;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding-left: 1.25rem;
 }
 
 main {
@@ -105,23 +161,36 @@ main {
   margin: auto;
 }
 
-footer{
-  background-color: black;
+footer {
+  background: linear-gradient(135deg, var(--darker-bg) 0%, #0f172a 100%);
   color: white;
   padding: 30px;
   text-align: center;
   margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.5s ease-out 0.3s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* City Guide Page */
 .city-guide-main {
-  background: #fff;
+  background: transparent;
   position: relative;
 }
 
 .city-guide-hero {
-  background: url('https://imageio.forbes.com/blogs-images/billretherford/files/2018/01/PIA12114_web_1024.jpg?height=288&width=711&fit=bounds') center/cover;
-  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 5rem 2rem;
   text-align: center;
   position: relative;
   min-height: 350px;
@@ -129,17 +198,21 @@ footer{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  margin: 2rem;
+  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+  animation: fadeInUp 0.8s ease-out;
 }
 
-.city-guide-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .city-guide-hero h1 {
@@ -147,76 +220,135 @@ footer{
   color: #fff;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
+  font-weight: 800;
 }
 
 .city-guide-hero h2 {
   font-size: 1.8rem;
-  color: #87ceeb;
+  color: #fff;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
 }
 
 .city-guide-content {
   padding: 3rem 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .intro-section {
   max-width: 900px;
   margin: 0 auto 3rem;
-  padding: 2rem;
-  background: #f5f5f5;
-  border-left: 4px solid #4a90e2;
-  border-radius: 4px;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #fff 0%, rgba(99, 102, 241, 0.02) 100%);
+  border-left: 6px solid var(--primary-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.intro-section:hover {
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+  transform: translateY(-3px);
 }
 
 .intro-section p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #333;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--text-dark);
   text-align: justify;
+  position: relative;
+  z-index: 2;
 }
 
 .attractions-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .attraction-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.attraction-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+  z-index: 10;
 }
 
 .attraction-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.attraction-card:hover::before {
+  transform: scaleX(1);
 }
 
 .attraction-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  background: #e0e0e0;
+  background: linear-gradient(135deg, #e0f2fe 0%, #faf5ff 100%);
+  transition: transform 0.4s ease;
+}
+
+.attraction-card:hover .attraction-image {
+  transform: scale(1.1);
 }
 
 .attraction-card h3 {
-  font-size: 1.3rem;
-  color: #0066cc;
-  padding: 1.5rem 1rem 0.5rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.attraction-card:hover h3 {
+  transform: translateX(5px);
 }
 
 .attraction-card p {
-  padding: 0 1rem 1.5rem;
+  padding: 0 1.5rem 2rem;
   font-size: 0.95rem;
-  color: #666;
+  color: var(--text-light);
   line-height: 1.6;
 }
 
@@ -224,16 +356,18 @@ footer{
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
 }
 
 .local-attractions-section h2 {
   font-size: 2rem;
-  color: #333;
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid #4a90e2;
+  border-bottom: 3px solid var(--primary-color);
   padding-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .attractions-list {
@@ -242,8 +376,14 @@ footer{
 
 .attractions-list li {
   padding: 1.5rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-color);
   line-height: 1.8;
+  transition: all 0.3s ease;
+}
+
+.attractions-list li:hover {
+  color: var(--primary-color);
+  padding-left: 0.5rem;
 }
 
 .attractions-list li:last-child {
@@ -251,6 +391,6 @@ footer{
 }
 
 .attractions-list strong {
-  color: #0066cc;
-  font-weight: 600;
+  color: var(--primary-color);
+  font-weight: 700;
 }
