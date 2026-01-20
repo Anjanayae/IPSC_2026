@@ -1,6 +1,100 @@
 @import url('shared-styles.css');
 
 /* Registration Page Specific Styling */
+
+/* TBD Section */
+.tbd {
+  padding: 8rem 2rem;
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 1200px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.tbd::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.tbd::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(10px);
+  animation: rotate-gradient 4s linear infinite;
+}
+
+.tbd h1 {
+  font-size: 4rem;
+  color: white;
+  font-weight: 800;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 30px rgba(99, 102, 241, 0.5),
+               0 0 60px rgba(244, 114, 182, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 10px 50px rgba(99, 102, 241, 0.3),
+                0 0 80px rgba(244, 114, 182, 0.2);
+  }
+  50% {
+    box-shadow: 0 15px 70px rgba(99, 102, 241, 0.5),
+                0 0 120px rgba(244, 114, 182, 0.3);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes rotate-gradient {
+  0% {
+    filter: blur(10px) hue-rotate(0deg);
+  }
+  100% {
+    filter: blur(10px) hue-rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .registration-hero {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%),
               url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
@@ -382,6 +476,15 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .tbd {
+    padding: 5rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .tbd h1 {
+    font-size: 2.5rem;
+  }
+
   .registration-hero {
     padding: 3rem 1rem;
   }
@@ -433,6 +536,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .tbd {
+    padding: 4rem 1rem;
+  }
+
+  .tbd h1 {
+    font-size: 2rem;
+  }
+
   .registration-hero h1 {
     font-size: 1.8rem;
   }
