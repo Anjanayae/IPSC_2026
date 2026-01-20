@@ -111,7 +111,6 @@ header {
 }
 
 .navlinks a::after {
-  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -207,7 +206,6 @@ header {
 }
 
 .registration-btn::before {
-  content: '';
   position: absolute;
   top: 0;
   left: -100%;
@@ -365,7 +363,6 @@ button[type="submit"] {
 
 .btn::before,
 .submit-btn::before {
-  content: '';
   position: absolute;
   top: 50%;
   left: 50%;

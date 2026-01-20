@@ -84,7 +84,6 @@ header {
 }
 
 .navlinks a::after {
-  content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -253,7 +252,6 @@ footer {
 }
 
 .intro-section::before {
-  content: '';
   position: absolute;
   top: -50px;
   right: -50px;
@@ -295,7 +293,6 @@ footer {
 }
 
 .attraction-card::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;

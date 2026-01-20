@@ -13,7 +13,6 @@
 }
 
 .gallery-hero::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -74,7 +73,6 @@
 }
 
 .tbd-card::before {
-  content: '';
   position: absolute;
   top: -50%;
   left: -50%;

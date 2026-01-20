@@ -105,7 +105,6 @@
 }
 
 .section .btn::before {
-  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -128,7 +127,6 @@
 }
 
 .section .btn::after {
-  content: '→';
   margin-left: 0.7rem;
   font-size: 1.3rem;
   transition: transform 0.3s ease;

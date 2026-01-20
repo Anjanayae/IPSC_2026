@@ -181,7 +181,6 @@
 }
 
 .tier-benefits li:before {
-  content: "✓";
   position: absolute;
   left: 0;
   color: #10b981;
@@ -224,7 +223,6 @@
 }
 
 .exhibition-list li:before {
-  content: "→";
   position: absolute;
   left: 0;
   color: #f472b6;

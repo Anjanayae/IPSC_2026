@@ -107,7 +107,6 @@ header {
 }
 
 .navlinks a::after {
-  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -146,7 +145,6 @@ header {
 }
 
 .registration-btn::before {
-  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -294,7 +292,6 @@ main {
 .btn-black-white::before,
 .btn-primary::before,
 .btn-large::before {
-  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -894,7 +891,6 @@ footer {
 }
 
 .highlight-card::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -1076,7 +1072,6 @@ footer {
 }
 
 .cta-section::before {
-  content: '';
   position: absolute;
   top: -50%;
   right: -50%;

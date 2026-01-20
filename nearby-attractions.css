@@ -132,7 +132,6 @@ footer{
 }
 
 .attractions-hero::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -177,7 +176,6 @@ footer{
 }
 
 .intro-section::before {
-  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -225,7 +223,6 @@ footer{
 .attraction-item:nth-child(6) { animation-delay: 0.6s; }
 
 .attraction-item::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -294,7 +291,6 @@ footer{
 }
 
 .travel-info-section::before {
-  content: '';
   position: absolute;
   bottom: -50px;
   right: -50px;

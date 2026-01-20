@@ -122,7 +122,6 @@ footer{
 }
 
 .outreach-main::before {
-  content: '';
   position: absolute;
   top: -50%;
   left: -20%;
@@ -135,7 +134,6 @@ footer{
 }
 
 .outreach-main::after {
-  content: '';
   position: absolute;
   bottom: -50%;
   right: -20%;
@@ -192,7 +190,6 @@ footer{
 }
 
 .outreach-content h2::after {
-  content: '';
   position: absolute;
   bottom: -3px;
   left: 0;

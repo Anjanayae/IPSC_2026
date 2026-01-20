@@ -13,7 +13,6 @@
 }
 
 .keynote-hero::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -62,7 +61,6 @@
 }
 
 .speaker-card::before {
-  content: '';
   position: absolute;
   top: 0;
   left: -100%;

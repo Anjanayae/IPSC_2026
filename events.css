@@ -84,7 +84,6 @@ header {
 }
 
 .navlinks a::after {
-  content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -261,7 +260,6 @@ footer {
 }
 
 .event-link::before {
-  content: '';
   position: absolute;
   top: 0;
   left: -100%;

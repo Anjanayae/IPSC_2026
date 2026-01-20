@@ -84,7 +84,6 @@ header {
 }
 
 .navlinks a::after {
-  content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -260,7 +259,6 @@ footer {
 }
 
 .person-card::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -298,7 +296,6 @@ footer {
 }
 
 .person-card-img::before {
-  content: '';
   position: absolute;
   top: -50%;
   right: -50%;

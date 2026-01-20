@@ -13,7 +13,6 @@
 }
 
 .committee-hero::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -86,7 +85,6 @@
 }
 
 .committee-member::before {
-  content: '';
   position: absolute;
   top: 0;
   left: -100%;
