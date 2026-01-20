@@ -73,6 +73,30 @@ This<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- Image Carousel Section -->
+  <div class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-slide fade">
+          <img src="assets/IITI_1.jpg" alt="IIT Indore Campus 1">
+        </div>
+        <div class="carousel-slide fade">
+          <img src="assets/IITI_2.jpg" alt="IIT Indore Campus 2">
+        </div>
+        <div class="carousel-slide fade">
+          <img src="assets/IITI_3.webp" alt="IIT Indore Campus 3">
+        </div>
+      </div>
+      <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+      <div class="carousel-dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </div>
+  </div>
+
   <!-- Main Content -->
   <div class="content" id="about">
     <!-- Features Section -->
@@ -116,10 +140,7 @@ This<!DOCTYPE html>
           </p>
         </div>
         <div class="about-image">
-          <div class="image-placeholder">
-            <i class="fas fa-satellite"></i>
-            <p>Space Exploration</p>
-          </div>
+          <img src="/assets/MoonMission.jpeg" alt="image">
         </div>
       </div>
     </div>
@@ -248,5 +269,50 @@ This<!DOCTYPE html>
 </footer>
 
 <script src="particles.js"></script>
+<script>
+  // Carousel functionality
+  let slideIndex = 0;
+  let autoSlideTimer;
+
+  function showSlides() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    
+    slides[slideIndex].classList.add('active');
+    dots[slideIndex].classList.add('active');
+  }
+
+  function changeSlide(n) {
+    clearTimeout(autoSlideTimer);
+    slideIndex += n;
+    showSlides();
+    autoSlide();
+  }
+
+  function currentSlide(n) {
+    clearTimeout(autoSlideTimer);
+    slideIndex = n;
+    showSlides();
+    autoSlide();
+  }
+
+  function autoSlide() {
+    autoSlideTimer = setTimeout(() => {
+      slideIndex++;
+      showSlides();
+      autoSlide();
+    }, 5000);
+  }
+
+  // Initialize carousel
+  showSlides();
+  autoSlide();
+</script>
 </body>
 </html>

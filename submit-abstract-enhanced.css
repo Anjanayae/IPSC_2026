@@ -121,7 +121,6 @@
 }
 
 .info-box li:before {
-  content: "✓";
   position: absolute;
   left: 0;
   color: #10b981;
