@@ -575,6 +575,19 @@ footer {
   z-index: 2;
 }
 
+.conference-date {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease-out 0.25s both;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
 .hosted-by {
   font-size: 1.15rem;
   font-weight: 500;
@@ -952,6 +965,84 @@ footer {
   font-size: 1.5rem;
   color: var(--nebula-pink);
   min-width: 30px;
+}
+
+/* Important Dates Section */
+.important-dates-section {
+  margin-bottom: 5rem;
+}
+
+.dates-table-wrapper {
+  overflow-x: auto;
+}
+
+.dates-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(30, 27, 75, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+}
+
+.dates-table thead {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+}
+
+.dates-table thead th {
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dates-table tbody tr {
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dates-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.dates-table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.dates-table tbody td {
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.event-name {
+  font-weight: 600;
+  color: #e2e8f0;
+  min-width: 250px;
+}
+
+.event-date {
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.deadline-row .event-date {
+  color: #fca5a5;
+}
+
+.registration-row .event-date {
+  color: #fbbf24;
+}
+
+.event-row .event-date {
+  color: #86efac;
 }
 
 /* CTA Section */

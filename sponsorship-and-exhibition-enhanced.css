@@ -1,0 +1,311 @@
+/* Sponsorship & Exhibition Enhanced Styles */
+.sponsorship-main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+  background-attachment: fixed;
+}
+
+.sponsorship-hero {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  padding: 6rem 2rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+}
+
+.sponsorship-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.sponsorship-hero h2 {
+  font-size: 1.8rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.sponsorship-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.message-section {
+  margin-bottom: 4rem;
+}
+
+.message-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a5b4fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.message-box {
+  background: rgba(30, 27, 75, 0.5);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+}
+
+.message-box p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.message-box p:last-child {
+  margin-bottom: 0;
+}
+
+.sponsorship-tiers {
+  margin-bottom: 4rem;
+}
+
+.sponsorship-tiers h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a5b4fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tier-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #a5b4fc;
+  margin-bottom: 2.5rem;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tier-card {
+  background: rgba(30, 27, 75, 0.5);
+  border: 2px solid;
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.tier-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+.tier-card.platinum {
+  border-color: #fbbf24;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 146, 60, 0.1));
+}
+
+.tier-card.platinum .tier-header {
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  color: #000;
+}
+
+.tier-card.gold {
+  border-color: #fbbf24;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(124, 58, 237, 0.08));
+}
+
+.tier-card.gold .tier-header {
+  background: linear-gradient(135deg, #fbbf24, #fbbf24);
+  color: #000;
+}
+
+.tier-card.silver {
+  border-color: #e2e8f0;
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.08), rgba(99, 102, 241, 0.08));
+}
+
+.tier-card.silver .tier-header {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  color: #1e293b;
+}
+
+.tier-card.bronze {
+  border-color: #d4672a;
+  background: linear-gradient(135deg, rgba(212, 103, 42, 0.08), rgba(139, 92, 246, 0.08));
+}
+
+.tier-card.bronze .tier-header {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #fff;
+}
+
+.tier-header {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.tier-header h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tier-benefits {
+  padding: 2rem;
+}
+
+.tier-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tier-benefits li {
+  color: #cbd5e1;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.tier-benefits li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.exhibition-section {
+  background: rgba(30, 27, 75, 0.5);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  margin-bottom: 3rem;
+}
+
+.exhibition-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  margin-bottom: 1.5rem;
+}
+
+.exhibition-section > p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.exhibition-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exhibition-list li {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1rem;
+}
+
+.exhibition-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f472b6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  margin-bottom: 1rem;
+}
+
+.contact-section > p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: inline-block;
+}
+
+.contact-details p {
+  color: #cbd5e1;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-details a {
+  color: #a5b4fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #f472b6;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sponsorship-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .sponsorship-hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .message-box {
+    padding: 1.5rem;
+  }
+
+  .message-box p {
+    font-size: 1rem;
+  }
+
+  .tier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsorship-tiers h2,
+  .exhibition-section h2,
+  .contact-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .sponsorship-content {
+    padding: 1.5rem 1rem;
+  }
+}
