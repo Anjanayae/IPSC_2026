@@ -97,10 +97,6 @@
   padding: 2rem;
   margin-bottom: 2rem;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .info-box h3 {
@@ -108,7 +104,6 @@
   font-weight: 600;
   color: #cbd5e1;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .info-box ul {
