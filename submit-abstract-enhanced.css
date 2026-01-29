@@ -97,6 +97,10 @@
   padding: 2rem;
   margin-bottom: 2rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-box h3 {
@@ -211,4 +215,20 @@
   color: #ffffff;
   text-align: center;
   margin-top: 2rem;
+}
+
+.submit-btn{
+  background: #6366f1;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.submit-btn a{
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
 }
