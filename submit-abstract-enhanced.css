@@ -205,6 +205,9 @@
   }
 }
 
+.acknowledgement{
+  margin-bottom: 20px;
+}
 .acknowledgement p {
   font-size: 1.2rem;
   color: #ffffff;
