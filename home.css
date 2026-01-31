@@ -1167,6 +1167,23 @@ footer {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+/* ================= DESKTOP DEFAULT ================= */
+#navMenu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hamburger {
+    display: none;
+}
+
 /* ============================================================
    MOBILE RESPONSIVE  (≤ 768 px)
    ============================================================ */

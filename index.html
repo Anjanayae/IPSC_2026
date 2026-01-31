@@ -114,7 +114,7 @@
                     <h2 class="subtitle">
                         The Seventh Indian Planetary Science Conference
                     </h2>
-                    <p class="conference-date">23–25 March 2026</p>
+                    <p class="conference-date">23 to 25 March 2026</p>
                     <p class="hosted-by">
                         Hosted by Department of Astronomy, Astrophysics and
                         Space Engineering, IIT Indore, 2026
@@ -237,7 +237,7 @@
                                 </tr>
                                 <tr class="event-row">
                                     <td class="event-name">Conference Dates</td>
-                                    <td class="event-date">23–25 March 2026</td>
+                                    <td class="event-date">23 to 25 March 2026</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -372,6 +372,8 @@
             // ─── Hamburger Toggle ───
             const hamburgerBtn = document.getElementById("hamburgerBtn");
             const navMenu = document.getElementById("navMenu");
+            hamburgerBtn.classList.remove("active");
+            navMenu.classList.remove("open");
 
             hamburgerBtn.addEventListener("click", () => {
                 hamburgerBtn.classList.toggle("active");
