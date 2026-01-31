@@ -1,295 +1,452 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <title>IPSC 2026</title>
-  <link rel="icon" href="iit_indore.ico" type="image/x-icon">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <head>
+        <title>IPSC 2026</title>
+        <link rel="icon" href="iit_indore.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="home.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-logo-group">
+                    <img src="assets/iit_indore.svg" class="iit-logo" />
+                    <img src="assets/logo.png" class="logo" />
+                </div>
 
-<header>
-  <nav class="navbar">
-    <div class="navbar-logo-group">
-      <img src="assets/iit_indore.svg" class="iit-logo">
-      <img src="assets/logo.png" class="logo">
-    </div>
-    <ul class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Programme</a>
-        <div class="dropdown-menu">
-          <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
-          <a href="keynote-speakers.html">Keynote Speakers</a>
-          <a href="program-glance.html">Program at a Glance</a>
-          <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
-          <a href="submit-abstract.html">Submit Abstract</a>
-        </div>
-      </li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Other Info</a>
-        <div class="dropdown-menu">
-          <a href="city-guide.html">City Guide</a>
-          <a href="nearby-attractions.html">Nearby Attractions</a>
-          <a href="travel.html">Travel</a>
-          <a href="accommodation.html">Accommodation</a>
-          <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
-          <a href="contacts.html">Contact</a>
-        </div>
-      </li>
-    </ul>
-    <a href="registration.html" class="registration-btn">Registration</a>
-  </nav>
-</header>
+                <!-- Hamburger Button -->
+                <button
+                    class="hamburger"
+                    id="hamburgerBtn"
+                    aria-label="Toggle menu"
+                >
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
 
-<main class="home-main">
-  <!-- Particle Background -->
-  <div class="particles" id="particles"></div>
-  
-  <!-- Hero Section -->
-  <div class="hero">
-    <div class="hero-background">
-      <div class="planet planet-1"></div>
-      <div class="planet planet-2"></div>
-      <div class="planet planet-3"></div>
-      <div class="stars"></div>
-    </div>
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="gradient-text">Welcome to</span><br>
-        <span class="main-title">IPSC 2026</span>
-      </h1>
-      <h2 class="subtitle">The Seventh Indian Planetary Science Conference</h2>
-      <p class="conference-date">23-25 March 2026</p>
-      <p class="hosted-by">Organised by Department of Astronomy, Astrophysics and Space Engineering, IIT Indore, 2026</p>
-      
-      <div class="cta-buttons">
-        <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank" class="btn-primary"><i class="fas fa-info-circle"></i> Call for Abstract</a>
-        <a href="submit-abstract.html" class="btn-secondary"><i class="fas fa-external-link-alt"></i> Submit Abstract</a>
-      </div>
-    </div>
-  </div>
+                <!-- Nav Links + Registration (slide-down mobile panel) -->
+                <div class="nav-menu" id="navMenu">
+                    <ul class="navlinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Programme
+                                <i
+                                    class="fas fa-chevron-down dropdown-arrow"
+                                ></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a
+                                    href="assets/Brochure_ipsc_2026.jpeg"
+                                    target="_blank"
+                                    >Download Brochure</a
+                                >
+                                <a href="keynote-speakers.html"
+                                    >Keynote Speakers</a
+                                >
+                                <a href="program-glance.html"
+                                    >Program at a Glance</a
+                                >
+                                <a href="detailed-program-schedule.html"
+                                    >Detailed Program Schedule</a
+                                >
+                                <a href="submit-abstract.html"
+                                    >Submit Abstract</a
+                                >
+                            </div>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Other Info
+                                <i
+                                    class="fas fa-chevron-down dropdown-arrow"
+                                ></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="city-guide.html">City Guide</a>
+                                <a href="nearby-attractions.html"
+                                    >Nearby Attractions</a
+                                >
+                                <a href="travel.html">Travel</a>
+                                <a href="accommodation.html">Accommodation</a>
+                                <a href="sponsorship-and-exhibition.html"
+                                    >Sponsorship & Exhibition</a
+                                >
+                                <a href="contacts.html">Contact</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="registration.html" class="registration-btn"
+                        >Registration</a
+                    >
+                </div>
+            </nav>
+        </header>
 
-  <!-- Image Carousel Section -->
-  <div class="carousel-section">
-    <div class="carousel-container">
-      <div class="carousel-wrapper">
-        <div class="carousel-slide fade">
-          <img src="assets/IITI_1.jpg" alt="IIT Indore Campus 1">
-        </div>
-        <div class="carousel-slide fade">
-          <img src="assets/IITI_2.jpg" alt="IIT Indore Campus 2">
-        </div>
-        <div class="carousel-slide fade">
-          <img src="assets/IITI_3.webp" alt="IIT Indore Campus 3">
-        </div>
-      </div>
-      <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-      <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
-      <div class="carousel-dots">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-      </div>
-    </div>
-  </div>
+        <main class="home-main">
+            <!-- Particle Background -->
+            <div class="particles" id="particles"></div>
 
-  <!-- Main Content -->
-  <div class="content" id="about">
-    
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-background">
+                    <div class="planet planet-1"></div>
+                    <div class="planet planet-2"></div>
+                    <div class="planet planet-3"></div>
+                    <div class="stars"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Welcome to</span><br />
+                        <span class="main-title">IPSC 2026</span>
+                    </h1>
+                    <h2 class="subtitle">
+                        The Seventh Indian Planetary Science Conference
+                    </h2>
+                    <p class="conference-date">23–25 March 2026</p>
+                    <p class="hosted-by">
+                        Hosted by Department of Astronomy, Astrophysics and
+                        Space Engineering, IIT Indore, 2026
+                    </p>
 
-    <!-- About Section -->
-    <div class="about-section">
-      <div class="section-header">
-        <span class="section-tag">About the Conference</span>
-        <h2>IPSC 2026</h2>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p class="intro-text">
-            We are thrilled to announce that the Seventh <strong class="highlight-text">Indian Planetary Science Conference (IPSC-2026)</strong> will be held in 2026 at the prestigious Department for Astronomy, Astrophysics and Space Engineering, Indian Institute of Technology Indore.
-          </p>
-          <p>
-            This highly anticipated event, organized by the Indian Institute of Technology Indore (IITI), marks the seventh IIT Indore conference hosted by IPSA, continuing our tradition of fostering collaboration and innovation in planetary science.
-          </p>
-        </div>
-        <div class="about-image">
-          <img src="/assets/MoonMission.jpeg" alt="image">
-        </div>
-      </div>
-    </div>
+                    <div class="cta-buttons">
+                        <a
+                            href="assets/Brochure_ipsc_2026.jpeg"
+                            target="_blank"
+                            class="btn-primary"
+                            ><i class="fas fa-info-circle"></i> Learn More</a
+                        >
+                        <a href="submit-abstract.html" class="btn-secondary"
+                            ><i class="fas fa-external-link-alt"></i> Submit
+                            Abstract</a
+                        >
+                    </div>
+                </div>
+            </div>
 
-    <!-- Important Dates Table -->
-    <div class="important-dates-section">
-      <div class="section-header">
-        <span class="section-tag">Mark Your Calendar</span>
-        <h2>Important Dates</h2>
-      </div>
-      <div class="dates-table-wrapper">
-        <table class="dates-table">
-          <thead>
-            <tr>
-              <th>Event</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="deadline-row">
-              <td class="event-name">Abstract Submission Deadline</td>
-              <td class="event-date">10 February 2026</td>
-            </tr>
-            <tr class="registration-row">
-              <td class="event-name">Registration Date</td>
-              <td class="event-date">TBD</td>
-            </tr>
-            <tr class="event-row">
-              <td class="event-name">Conference Dates</td>
-              <td class="event-date">23-25 March 2026</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+            <!-- Image Carousel Section -->
+            <div class="carousel-section">
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide fade">
+                            <img
+                                src="assets/IITI_1.jpg"
+                                alt="IIT Indore Campus 1"
+                            />
+                        </div>
+                        <div class="carousel-slide fade">
+                            <img
+                                src="assets/IITI_2.jpg"
+                                alt="IIT Indore Campus 2"
+                            />
+                        </div>
+                        <div class="carousel-slide fade">
+                            <img
+                                src="assets/IITI_3.webp"
+                                alt="IIT Indore Campus 3"
+                            />
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                        &#10094;
+                    </button>
+                    <button class="carousel-btn next" onclick="changeSlide(1)">
+                        &#10095;
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot" onclick="currentSlide(0)"></span>
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Conference Highlights -->
-    <div class="highlights-section">
-      <div class="section-header">
-        <span class="section-tag">What to Expect</span>
-        <h2>Conference Highlights</h2>
-      </div>
-      <div class="highlights-grid">
-        <div class="highlight-card">
-          <div class="highlight-number">01</div>
-          <h3><i class="fas fa-microphone"></i> Keynote Sessions</h3>
-          <p>Inspiring talks from renowned scientists and thought leaders</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-number">02</div>
-          <h3><i class="fas fa-comments"></i> Panel Discussions</h3>
-          <p>Engage in collaborative discussions on cutting-edge topics</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-number">03</div>
-          <h3><i class="fas fa-chalkboard-teacher"></i> Poster Presentations</h3>
-          <p>Showcase your research and connect with peers</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-number">04</div>
-          <h3><i class="fas fa-network-wired"></i> Networking Events</h3>
-          <p>Build lasting connections with the global scientific community</p>
-        </div>
-      </div>
-    </div>
+            <!-- Main Content -->
+            <div class="content" id="about">
+                <!-- About Section -->
+                <div class="about-section">
+                    <div class="section-header">
+                        <span class="section-tag">About the Conference</span>
+                        <h2>IPSC 2026</h2>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="intro-text">
+                                We are thrilled to announce that the Seventh
+                                <strong class="highlight-text"
+                                    >Indian Planetary Science Conference
+                                    (IPSC-2026)</strong
+                                >
+                                will be held in 2026 at the prestigious
+                                Department for Astronomy, Astrophysics and Space
+                                Engineering, Indian Institute of Technology
+                                Indore.
+                            </p>
+                            <p>
+                                This highly anticipated event, organized by the
+                                Indian Institute of Technology Indore (IITI),
+                                marks the seventh IIT Indore conference hosted
+                                by IPSA, continuing our tradition of fostering
+                                collaboration and innovation in planetary
+                                science.
+                            </p>
+                        </div>
+                        <div class="about-image">
+                            <img src="/assets/MoonMission.jpeg" alt="image" />
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Topics Section -->
-    <div class="topics-section">
-      <div class="section-header">
-        <span class="section-tag">Research Areas</span>
-        <h2>Key Topics</h2>
-      </div>
-      <div class="topics-grid">
-        <div class="topic-item">
-          <i class="fas fa-cloud"></i>
-          <span>Planetary Atmospheres, Surfaces and Interiors</span>
-        </div>
-        <div class="topic-item">
-          <i class="fas fa-satellite"></i>
-          <span>Space Instrumentation - Current and Future Space Missions</span>
-        </div>
-        <div class="topic-item">
-          <i class="fas fa-bolt"></i>
-          <span>Space Weather on Planets</span>
-        </div>
-        <div class="topic-item">
-          <i class="fas fa-flask"></i>
-          <span>Astrochemistry and Astrobiology</span>
-        </div>
-        <div class="topic-item">
-          <i class="fas fa-sun"></i>
-          <span>Solar System Bodies and Exoplanets</span>
-        </div>
-      </div>
-    </div>
+                <!-- Important Dates Table -->
+                <div class="important-dates-section">
+                    <div class="section-header">
+                        <span class="section-tag">Mark Your Calendar</span>
+                        <h2>Important Dates</h2>
+                    </div>
+                    <div class="dates-table-wrapper">
+                        <table class="dates-table">
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="deadline-row">
+                                    <td class="event-name">
+                                        Abstract Submission Deadline
+                                    </td>
+                                    <td class="event-date">10 February 2026</td>
+                                </tr>
+                                <tr class="registration-row">
+                                    <td class="event-name">
+                                        Registration Date
+                                    </td>
+                                    <td class="event-date">TBD</td>
+                                </tr>
+                                <tr class="event-row">
+                                    <td class="event-name">Conference Dates</td>
+                                    <td class="event-date">23–25 March 2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-    <!-- CTA Section -->
-    <div class="cta-section">
-      <div class="cta-content">
-        <h2><i class="fas fa-paper-plane"></i> Ready to Join Us?</h2>
-        <p>Submit your abstract and be part of this exciting scientific journey</p>
-        <a href="submit-abstract.html" class="btn-large">
-          <span>Submit Abstract</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</main>
+                <!-- Conference Highlights -->
+                <div class="highlights-section">
+                    <div class="section-header">
+                        <span class="section-tag">What to Expect</span>
+                        <h2>Conference Highlights</h2>
+                    </div>
+                    <div class="highlights-grid">
+                        <div class="highlight-card">
+                            <div class="highlight-number">01</div>
+                            <h3>
+                                <i class="fas fa-microphone"></i> Keynote
+                                Sessions
+                            </h3>
+                            <p>
+                                Inspiring talks from renowned scientists and
+                                thought leaders
+                            </p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-number">02</div>
+                            <h3>
+                                <i class="fas fa-comments"></i> Panel
+                                Discussions
+                            </h3>
+                            <p>
+                                Engage in collaborative discussions on
+                                cutting-edge topics
+                            </p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-number">03</div>
+                            <h3>
+                                <i class="fas fa-chalkboard-teacher"></i> Poster
+                                Presentations
+                            </h3>
+                            <p>Showcase your research and connect with peers</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-number">04</div>
+                            <h3>
+                                <i class="fas fa-network-wired"></i> Networking
+                                Events
+                            </h3>
+                            <p>
+                                Build lasting connections with the global
+                                scientific community
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>IPSC 2026</h3>
-      <p>Indian Planetary Science Conference</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="footer-divider"></div>
-    <p class="footer-credit">Maintained by Web Team @ DAASE</p>
-  </div>
-</footer>
+                <!-- Topics Section -->
+                <div class="topics-section">
+                    <div class="section-header">
+                        <span class="section-tag">Research Areas</span>
+                        <h2>Key Topics</h2>
+                    </div>
+                    <div class="topics-grid">
+                        <div class="topic-item">
+                            <i class="fas fa-cloud"></i>
+                            <span
+                                >Planetary Atmospheres, Surfaces and
+                                Interiors</span
+                            >
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-satellite"></i>
+                            <span
+                                >Space Instrumentation - Current and Future
+                                Space Missions</span
+                            >
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Space Weather on Planets</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-flask"></i>
+                            <span>Astrochemistry and Astrobiology</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-sun"></i>
+                            <span>Solar System Bodies and Exoplanets</span>
+                        </div>
+                    </div>
+                </div>
 
-<script src="particles.js"></script>
-<script>
-  // Carousel functionality
-  let slideIndex = 0;
-  let autoSlideTimer;
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <div class="cta-content">
+                        <h2>
+                            <i class="fas fa-paper-plane"></i> Ready to Join Us?
+                        </h2>
+                        <p>
+                            Submit your abstract and be part of this exciting
+                            scientific journey
+                        </p>
+                        <a href="submit-abstract.html" class="btn-large">
+                            <span>Submit Abstract</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-  function showSlides() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    
-    slides[slideIndex].classList.add('active');
-    dots[slideIndex].classList.add('active');
-  }
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IPSC 2026</h3>
+                    <p>Indian Planetary Science Conference</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-credit">Maintained by Web Team @ DAASE</p>
+            </div>
+        </footer>
 
-  function changeSlide(n) {
-    clearTimeout(autoSlideTimer);
-    slideIndex += n;
-    showSlides();
-    autoSlide();
-  }
+        <script src="particles.js"></script>
+        <script>
+            // ─── Hamburger Toggle ───
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const navMenu = document.getElementById("navMenu");
 
-  function currentSlide(n) {
-    clearTimeout(autoSlideTimer);
-    slideIndex = n;
-    showSlides();
-    autoSlide();
-  }
+            hamburgerBtn.addEventListener("click", () => {
+                hamburgerBtn.classList.toggle("active");
+                navMenu.classList.toggle("open");
+            });
 
-  function autoSlide() {
-    autoSlideTimer = setTimeout(() => {
-      slideIndex++;
-      showSlides();
-      autoSlide();
-    }, 5000);
-  }
+            // Close menu when a plain nav link is clicked (not a dropdown toggle)
+            navMenu
+                .querySelectorAll(
+                    ".navlinks > li:not(.dropdown) > a, .dropdown-menu a",
+                )
+                .forEach((link) => {
+                    link.addEventListener("click", () => {
+                        hamburgerBtn.classList.remove("active");
+                        navMenu.classList.remove("open");
+                    });
+                });
 
-  // Initialize carousel
-  showSlides();
-  autoSlide();
-</script>
-</body>
+            // ─── Mobile Dropdown Accordion ───
+            document.querySelectorAll(".dropdown").forEach((dropdown) => {
+                const toggle = dropdown.querySelector(".dropdown-toggle");
+                toggle.addEventListener("click", (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        // Close every other dropdown first
+                        document
+                            .querySelectorAll(".dropdown")
+                            .forEach((other) => {
+                                if (other !== dropdown)
+                                    other.classList.remove("open");
+                            });
+                        dropdown.classList.toggle("open");
+                    }
+                });
+            });
+
+            // ─── Carousel ───
+            let slideIndex = 0;
+            let autoSlideTimer;
+
+            function showSlides() {
+                const slides = document.querySelectorAll(".carousel-slide");
+                const dots = document.querySelectorAll(".dot");
+                slides.forEach((s) => s.classList.remove("active"));
+                dots.forEach((d) => d.classList.remove("active"));
+                if (slideIndex >= slides.length) slideIndex = 0;
+                if (slideIndex < 0) slideIndex = slides.length - 1;
+                slides[slideIndex].classList.add("active");
+                dots[slideIndex].classList.add("active");
+            }
+
+            function changeSlide(n) {
+                clearTimeout(autoSlideTimer);
+                slideIndex += n;
+                showSlides();
+                autoSlide();
+            }
+
+            function currentSlide(n) {
+                clearTimeout(autoSlideTimer);
+                slideIndex = n;
+                showSlides();
+                autoSlide();
+            }
+
+            function autoSlide() {
+                autoSlideTimer = setTimeout(() => {
+                    slideIndex++;
+                    showSlides();
+                    autoSlide();
+                }, 5000);
+            }
+
+            showSlides();
+            autoSlide();
+        </script>
+    </body>
 </html>

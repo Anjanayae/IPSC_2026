@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Travel IPSA</title>
+  <title>Travel IPSC 2026</title>
   <link rel="icon" href="iit_indore.ico" type="image/x-icon">
-  <link rel="stylesheet" href="shared-styles.css">
   <link rel="stylesheet" href="travel-enhanced.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -16,40 +16,57 @@
       <img src="assets/iit_indore.svg" class="iit-logo">
       <img src="assets/logo.png" class="logo">
     </div>
-    <ul class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Programme</a>
-        <div class="dropdown-menu">
-          <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
-          <a href="keynote-speakers.html">Keynote Speakers</a>
-          <a href="program-glance.html">Program at a Glance</a>
-          <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
-          <a href="submit-abstract.html">Submit Abstract</a>
-        </div>
-      </li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Other Info</a>
-        <div class="dropdown-menu">
-          <a href="city-guide.html">City Guide</a>
-          <a href="nearby-attractions.html">Nearby Attractions</a>
-          <a href="travel.html">Travel</a>
-          <a href="accommodation.html">Accommodation</a>
-          <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
-          <a href="contacts.html">Contact</a>
-        </div>
-      </li>
-    </ul>
-    <a href="registration.html" class="registration-btn">Registration</a>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Nav Links + Registration (slide-down mobile panel) -->
+    <div class="nav-menu" id="navMenu">
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Programme
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
+            <a href="keynote-speakers.html">Keynote Speakers</a>
+            <a href="program-glance.html">Program at a Glance</a>
+            <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
+            <a href="submit-abstract.html">Submit Abstract</a>
+          </div>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Other Info
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="city-guide.html">City Guide</a>
+            <a href="nearby-attractions.html">Nearby Attractions</a>
+            <a href="travel.html">Travel</a>
+            <a href="accommodation.html">Accommodation</a>
+            <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
+            <a href="contacts.html">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <a href="registration.html" class="registration-btn">Registration</a>
+    </div>
   </nav>
 </header>
 
-<!-- Particle Background -->
-<div class="particles" id="particles"></div>
-
 <main class="travel-main">
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
+
   <div class="travel-hero">
     <h1>Travel Information</h1>
     <h2>Getting to IIT Indore</h2>
@@ -58,7 +75,7 @@
   <div class="travel-content">
     <!-- About IIT Indore Section -->
     <div class="info-section">
-      <h2>About IIT Indore</h2>
+      <h2><i class="fas fa-university"></i> About IIT Indore</h2>
       <p>
         IIT Indore was established in 2009 with the motto 'Knowledge is for the well-being of everyone'. It belongs to the IIT family, which is known to provide the best education in Engineering and Technology across India. IIT Indore has shown relentless effort in providing the best platform for education as well as research in several areas of science and technology.
       </p>
@@ -69,11 +86,14 @@
 
     <!-- How to Reach Section -->
     <div class="info-section">
-      <h2>How to Reach IIT Indore</h2>
+      <h2><i class="fas fa-map-marked-alt"></i> How to Reach IIT Indore</h2>
       
       <div class="route-card">
-        <h3>From Indore Railway Station / Bus Stand</h3>
-        <p><strong>Distance:</strong> 24.4 Kms | <strong>Travel time:</strong> 50 minutes</p>
+        <h3><i class="fas fa-train"></i> From Indore Railway Station / Bus Stand</h3>
+        <div class="route-details">
+          <span class="detail-badge"><i class="fas fa-route"></i> Distance: 24.4 Kms</span>
+          <span class="detail-badge"><i class="fas fa-clock"></i> Travel time: 50 minutes</span>
+        </div>
         <ul>
           <li>Book Taxi/Auto (fare approx. Rs. 400-500) up to IIT Indore Simrol 453552</li>
           <li><em>Note: Please ask your driver to follow the way via Tejaji Nagar, which is the shortest route to reach IIT Indore Simrol 453552 from Indore Railway Station.</em></li>
@@ -81,8 +101,11 @@
       </div>
 
       <div class="route-card">
-        <h3>From Indore Airport</h3>
-        <p><strong>Distance:</strong> 35.3 Kms | <strong>Travel time:</strong> 1 hour 6 minutes</p>
+        <h3><i class="fas fa-plane"></i> From Indore Airport</h3>
+        <div class="route-details">
+          <span class="detail-badge"><i class="fas fa-route"></i> Distance: 35.3 Kms</span>
+          <span class="detail-badge"><i class="fas fa-clock"></i> Travel time: 1 hour 6 minutes</span>
+        </div>
         <ul>
           <li>Book Taxi/Auto (fare approx. Rs. 600-800) up to IIT Indore Simrol</li>
           <li><em>Note: Please ask your driver to follow the way via Tejaji Nagar, which is the shortest route to reach IIT Indore Simrol 453552 from Indore Airport (Devi Ahilya Bai Holkar Airport).</em></li>
@@ -92,47 +115,50 @@
 
     <!-- Travel Services Section -->
     <div class="info-section">
-      <h2>Pickup/Drop Services During Conference</h2>
+      <h2><i class="fas fa-shuttle-van"></i> Pickup/Drop Services During Conference</h2>
       <p>
         Pickup/Drop from IIT Indore to respective pick-up points will be provided during the conference only.
       </p>
       <p>
-        <strong>Please fill out <a href="https://forms.gle/WLcMKFTCQnyXDzWW9" target="_blank">this form</a> to avail the pickup and drop-off facility to the conference venue.</strong>
+        <strong>Please fill out <a href="https://forms.gle/WLcMKFTCQnyXDzWW9" target="_blank"><i class="fas fa-external-link-alt"></i> this form</a> to avail the pickup and drop-off facility to the conference venue.</strong>
       </p>
-      <p class="note">
-        <strong>Note:</strong> There is no pickup/drop off facility from Airport/Railway stations to hotels/IIT Indore. However, you may book directly on the below-mentioned travel agencies on a payment basis.
-      </p>
-
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        <p><strong>Mr. Mahesh:</strong> +91 9479583639</p>
-        <p><strong>Mr. Santosh:</strong> +91 9826993337</p>
+      
+      <div class="note">
+        <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> There is no pickup/drop off facility from Airport/Railway stations to hotels/IIT Indore. However, you may book directly on the below-mentioned travel agencies on a payment basis.</p>
       </div>
 
-      <div class="pricing-table">
-        <h3>Cab/Car Options</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Vehicle Type</th>
-              <th>Rate (Per Trip)</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dezire</td>
-              <td>Rs. 900/-</td>
-              <td>GST and parking excluded</td>
-            </tr>
-            <tr>
-              <td>Ertiga</td>
-              <td>Rs. 2000/-</td>
-              <td>GST and parking excluded</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="booking-note"><strong>Important:</strong> Please book your cab/car at least one day before your arrival and departure.</p>
+      <div class="contact-info">
+        <h3><i class="fas fa-phone-alt"></i> Contact Information</h3>
+        <p><strong>Mr. Mahesh:</strong> <a href="tel:+919479583639">+91 9479583639</a></p>
+        <p><strong>Mr. Santosh:</strong> <a href="tel:+919826993337">+91 9826993337</a></p>
+      </div>
+
+      <div class="pricing-section">
+        <h3><i class="fas fa-car"></i> Cab/Car Options</h3>
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Vehicle Type</th>
+                <th>Rate (Per Trip)</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dezire</td>
+                <td class="price">Rs. 900/-</td>
+                <td>GST and parking excluded</td>
+              </tr>
+              <tr>
+                <td>Ertiga</td>
+                <td class="price">Rs. 2000/-</td>
+                <td>GST and parking excluded</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="booking-note"><i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> Please book your cab/car at least one day before your arrival and departure.</p>
       </div>
     </div>
   </div>
@@ -140,10 +166,54 @@
 
 <footer>
   <div class="footer-content">
-    <p><i class="fas fa-code"></i> Maintained by Web Team @ DAASE</p>
+    <div class="footer-section">
+      <h3>IPSC 2026</h3>
+      <p>Indian Planetary Science Conference</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-credit">Maintained by Web Team @ DAASE</p>
   </div>
 </footer>
 
 <script src="particles.js"></script>
+<script>
+  // ─── Hamburger Toggle ───
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('open');
+  });
+
+  // Close menu when a plain nav link is clicked (not a dropdown toggle)
+  navMenu.querySelectorAll('.navlinks > li:not(.dropdown) > a, .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('active');
+      navMenu.classList.remove('open');
+    });
+  });
+
+  // ─── Mobile Dropdown Accordion ───
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        // Close every other dropdown first
+        document.querySelectorAll('.dropdown').forEach(other => {
+          if (other !== dropdown) other.classList.remove('open');
+        });
+        dropdown.classList.toggle('open');
+      }
+    });
+  });
+</script>
 </body>
 </html>

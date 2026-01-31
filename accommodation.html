@@ -1,283 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <title>Accommodation IPSA</title>
-  <link rel="icon" href="iit_indore.ico" type="image/x-icon">
-  <link rel="stylesheet" href="shared-styles.css">
-  <link rel="stylesheet" href="accommodation-enhanced.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <head>
+        <title>Accommodation IPSC 2026</title>
+        <link rel="icon" href="iit_indore.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="accommodation-enhanced.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-logo-group">
+                    <img src="assets/iit_indore.svg" class="iit-logo" />
+                    <img src="assets/logo.png" class="logo" />
+                </div>
 
-<header>
-  <nav class="navbar">
-    <div class="navbar-logo-group">
-      <img src="assets/iit_indore.svg" class="iit-logo">
-      <img src="assets/logo.png" class="logo">
-    </div>
-    <ul class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <!-- <li><a href="constitution.html">Constitution</a></li> -->
-      <li><a href="committee.html">Committee</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Programme</a>
-        <div class="dropdown-menu">
-          <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
-          <a href="keynote-speakers.html">Keynote Speakers</a>
-          <a href="program-glance.html">Program at a Glance</a>
-          <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
-          <a href="submit-abstract.html">Submit Abstract</a>
-        </div>
-      </li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Other Info</a>
-        <div class="dropdown-menu">
-          <a href="city-guide.html">City Guide</a>
-          <a href="nearby-attractions.html">Nearby Attractions</a>
-          <a href="travel.html">Travel</a>
-          <a href="accommodation.html">Accommodation</a>
-          <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
-          <a href="contacts.html">Contact</a>
-        </div>
-      </li>
-    </ul>
-    <a href="registration.html" class="registration-btn">Registration</a>
-  </nav>
-</header>
+                <!-- Hamburger Button -->
+                <button
+                    class="hamburger"
+                    id="hamburgerBtn"
+                    aria-label="Toggle menu"
+                >
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
 
-<!-- Particle Background -->
-<div class="particles" id="particles"></div>
+                <!-- Nav Links + Registration (slide-down mobile panel) -->
+                <div class="nav-menu" id="navMenu">
+                    <ul class="navlinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Programme
+                                <i
+                                    class="fas fa-chevron-down dropdown-arrow"
+                                ></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a
+                                    href="assets/Brochure_ipsc_2026.jpeg"
+                                    target="_blank"
+                                    >Download Brochure</a
+                                >
+                                <a href="keynote-speakers.html"
+                                    >Keynote Speakers</a
+                                >
+                                <a href="program-glance.html"
+                                    >Program at a Glance</a
+                                >
+                                <a href="detailed-program-schedule.html"
+                                    >Detailed Program Schedule</a
+                                >
+                                <a href="submit-abstract.html"
+                                    >Submit Abstract</a
+                                >
+                            </div>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Other Info
+                                <i
+                                    class="fas fa-chevron-down dropdown-arrow"
+                                ></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="city-guide.html">City Guide</a>
+                                <a href="nearby-attractions.html"
+                                    >Nearby Attractions</a
+                                >
+                                <a href="travel.html">Travel</a>
+                                <a href="accommodation.html">Accommodation</a>
+                                <a href="sponsorship-and-exhibition.html"
+                                    >Sponsorship & Exhibition</a
+                                >
+                                <a href="contacts.html">Contact</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="registration.html" class="registration-btn"
+                        >Registration</a
+                    >
+                </div>
+            </nav>
+        </header>
 
-<main class="accommodation-main">
-  <div class="accommodation-hero">
-    <h1>Accommodation</h1>
-    <h2>Stay Options for the Conference</h2>
-  </div>
+        <main class="accommodation-main">
+            <!-- Particle Background -->
+            <div class="particles" id="particles"></div>
 
-  <div class="accommodation-content">
-    <!-- Institute Accommodation Section -->
-    <div class="accommodation-section">
-      <h2>Institute Accommodation</h2>
-      <div class="accommodation-card">
-        <h3>IIT Indore Campus - TEQIP</h3>
-        <p>We are confirming the stay of 100 participants (60 boys and 40 girls)  in the HJB hostel, double occupancy room, for the upcoming workshop on International Planetary Science Conference (IPSC) from 22nd - 26th March 2026. Chargeable amount is Rs.473/-* per day per participant for the accommodation.</p>
-        
-        <ul class="room-details">
-          <caption>Kindly confirm the following 4 days before commencing the workshop:</caption>
-          <li>Name of the Guest</li>
-          <li>Contact Number</li>
-          <li>Gender</li>
-          <li>Address</li>
-          <li>Arrival and Departure Dates with time</li>
-        </ul>
-        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScdVq4XZSVo--81Z42LXBr_DnU_idKZZCFNFmU3f5sGHJjzyA/viewform" target="_blank">Google Form</a> -->
-      </div>
-    </div>
+            <div class="accommodation-hero">
+                <h1>Accommodation</h1>
+                <h2>Stay Options for the Conference</h2>
+            </div>
 
-    <!-- Outside Accommodation Section -->
-    <div class="accommodation-section">
-      <h2>Outside Accommodation</h2>
-      <div class="announcement-box">
-        <i class="fas fa-info-circle"></i>
-        <p class="announcement-text">To be Announced Soon</p>
-      </div>
-      <!-- <p>
-        <strong>Please fill out <a href="https://forms.gle/WLcMKFTCQnyXDzWW9" target="_blank">this form</a> to avail the pickup and drop-off facility to the conference venue.</strong>
-      </p>
-      <p>We will arrange To & Fro pickup/drop off service from the below-mentioned pickup points. You can also book a nearby location and catch the conference transport from these locations.</p>
+            <div class="accommodation-content">
+                <!-- Institute Accommodation Section -->
+                <div class="accommodation-section">
+                    <h2>
+                        <i class="fas fa-building"></i> Institute Accommodation
+                    </h2>
+                    <div class="accommodation-card">
+                        <h3>
+                            <i class="fas fa-bed"></i> IIT Indore Campus - TEQIP
+                        </h3>
+                        <p>
+                            We are confirming the stay of 100 participants (60
+                            boys and 40 girls) in the HJB hostel, double
+                            occupancy room, for the upcoming workshop on
+                            International Planetary Science Conference (IPSC)
+                            from 22nd - 26th March 2026. Chargeable amount is
+                            Rs.473/-* per day per participant for the
+                            accommodation.
+                        </p>
 
-      <div class="pickup-point">
-        <h3>Pickup Point - Chokhi Dhani (Nearest to IIT Indore - Special Rates)</h3>
-        <table class="hotel-table">
-          <thead>
-            <tr>
-              <th>Hotel Name</th>
-              <th>Address</th>
-              <th>Room Rate (Rs)</th>
-              <th>Mobile No.</th>
-              <th>Contact Person</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Chokhi Dhani</td>
-              <td>9 Mile, Fata Khandwa Road, Datoda, Indore, Madhya Pradesh 452020</td>
-              <td>Cottage: 2.5K<br>Royal Cottage: 3.5K<br>(+ Rs. 200 breakfast)</td>
-              <td>9993211228</td>
-              <td>Lakhan Singh</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="hotel-note">Participants can directly contact the hotel and mention IIT Indore to book the accommodation at special rates.</p>
-      </div>
+                        <div class="room-details">
+                            <h4>
+                                <i class="fas fa-clipboard-list"></i> Required
+                                Information
+                            </h4>
+                            <p class="details-note">
+                                Kindly confirm the following 4 days before
+                                commencing the workshop:
+                            </p>
+                            <ul>
+                                <li>Name of the Guest</li>
+                                <li>Contact Number</li>
+                                <li>Gender</li>
+                                <li>Address</li>
+                                <li>Arrival and Departure Dates with time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="pickup-point">
-        <h3>Pickup Point - Hotel Radisson Blu and Hotel The Park Area</h3>
-        <table class="hotel-table">
-          <thead>
-            <tr>
-              <th>Hotel Name</th>
-              <th>Address</th>
-              <th>Room Rate (Rs)</th>
-              <th>Mobile No.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Radisson Blu</td>
-              <td>12, Ring Rd, Scheme No 171, Indore, Madhya Pradesh 452010</td>
-              <td>6-7K</td>
-              <td>07316738888</td>
-            </tr>
-            <tr>
-              <td>Fairfield by Marriott Indore</td>
-              <td>Plot No 18, C CA, Ring Rd, Scheme No 94 Sector EB, Indore, Madhya Pradesh 452010</td>
-              <td>5-7K</td>
-              <td>07314780000</td>
-            </tr>
-            <tr>
-              <td>Effotel by Sayaji</td>
-              <td>Plot No. 10, C/ C.A, Scheme No:94, Sector C, Scheme 94 Sector CA, Indore, Madhya Pradesh 452010</td>
-              <td>6-7K</td>
-              <td>07880098008</td>
-            </tr>
-            <tr>
-              <td>Sayaji Hotel Indore</td>
-              <td>H/1 , Scheme No.54, Vijay Nagar, Indore, Madhya Pradesh 452010</td>
-              <td>9-10K</td>
-              <td>07314006666</td>
-            </tr>
-            <tr>
-              <td>Treebo Trend Daksh Residency</td>
-              <td>16/GF, Scheme No. 54, Opposite Meghdoot Garden, Vijay Nagar, Indore, Madhya Pradesh 452001</td>
-              <td>3-4K</td>
-              <td>09322800100</td>
-            </tr>
-            <tr>
-              <td>The Park Indore</td>
-              <td>Plot No 5, IDA, Scheme 159, MR 10 Rd, Indore, Madhya Pradesh 452010</td>
-              <td>6-7K</td>
-              <td>07314860000</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                <!-- Outside Accommodation Section -->
+                <div class="accommodation-section">
+                    <h2><i class="fas fa-hotel"></i> Outside Accommodation</h2>
+                    <div class="announcement-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="announcement-text">To be Announced Soon</p>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-      <div class="pickup-point">
-        <h3>Pickup Point - Hotel Shreemaya Area</h3>
-        <table class="hotel-table">
-          <thead>
-            <tr>
-              <th>Hotel Name</th>
-              <th>Address</th>
-              <th>Room Rate (Rs)</th>
-              <th>Mobile No.</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Hotel Shreemaya</td>
-              <td>12, R.N.T. Marg, Indore - 452001</td>
-              <td>3-4K</td>
-              <td>9630066616</td>
-              <td>shree@shreemaya.com</td>
-            </tr>
-            <tr>
-              <td>Hotel President</td>
-              <td>163, R.N.T. Marg, Indore - 452001</td>
-              <td>3-4K</td>
-              <td>9644006680</td>
-              <td>reservations@hotelpresidentindore.com</td>
-            </tr>
-            <tr>
-              <td>Hotel Winway</td>
-              <td>164/1 RNT Marg Indore - 452001</td>
-              <td>3-4K</td>
-              <td>7316611111</td>
-              <td>fom@hotelwinway.com</td>
-            </tr>
-            <tr>
-              <td>Hotel Utsav Residency</td>
-              <td>225, RNT Marg, Opp. Dawa Bazar, Chetak Chember, Chhawni Road, Indore(M.P.)</td>
-              <td>1-2K</td>
-              <td>7415551967</td>
-              <td>utsavinfo225@gmail.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IPSC 2026</h3>
+                    <p>Indian Planetary Science Conference</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-credit">Maintained by Web Team @ DAASE</p>
+            </div>
+        </footer>
 
-      <div class="pickup-point">
-        <h3>Pickup Points - Hotel Kings Park, Bhawar Kua, IT Park, and Tejaji Nagar</h3>
-        <table class="hotel-table">
-          <thead>
-            <tr>
-              <th>Hotel Name</th>
-              <th>Address</th>
-              <th>Room Rate (Rs)</th>
-              <th>Mobile No.</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Kings Park Hotel</td>
-              <td>A-1, Vishnupuri Main, Bhawarkua, A.B. Road, Indore - 452017</td>
-              <td>5-6K</td>
-              <td>9977044077</td>
-              <td>kingsparkhotel77@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Blue Bells</td>
-              <td>16, Vishnupuri Main, Near Medisquare Hospital, Indore</td>
-              <td>3.5-5K</td>
-              <td>9993922335</td>
-              <td>bluebellsbnb@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Golden Treat Hotel</td>
-              <td>13, Professor Colony, Near Bhaawarkua Square, Indore</td>
-              <td>1.4-2K</td>
-              <td>9669200014</td>
-              <td>hotelgoldentreat@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Itsy By Treebo - Phoenix</td>
-              <td>25-B, Nanak Nagar, Piplyarau Road, Near IT Park, Indore</td>
-              <td>1.5-2K</td>
-              <td>9977559913</td>
-              <td>hotelphoenix2023@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Hotel Sukhmani Residency</td>
-              <td>22/A, Nanak Nagar, Ring Road, Near IT Park, Indore</td>
-              <td>1.5-2K</td>
-              <td>-</td>
-              <td>hotelsukhmaniresidency@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Royal Imperia</td>
-              <td>Opposite Side of Bharat Petrol Pump, Tejaji Nagar, Indore - 452022</td>
-              <td>2-3K</td>
-              <td>9009008188</td>
-              <td>royalimperiaindore@gmail.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
-    </div>
-  </div>
-</main>
+        <script src="particles.js"></script>
+        <script>
+            // ─── Hamburger Toggle ───
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const navMenu = document.getElementById("navMenu");
 
-<footer>
-  <div class="footer-content">
-    <p><i class="fas fa-code"></i> Maintained by Web Team @ DAASE</p>
-  </div>
-</footer>
+            hamburgerBtn.addEventListener("click", () => {
+                hamburgerBtn.classList.toggle("active");
+                navMenu.classList.toggle("open");
+            });
 
-<script src="particles.js"></script>
-</body>
+            // Close menu when a plain nav link is clicked (not a dropdown toggle)
+            navMenu
+                .querySelectorAll(
+                    ".navlinks > li:not(.dropdown) > a, .dropdown-menu a",
+                )
+                .forEach((link) => {
+                    link.addEventListener("click", () => {
+                        hamburgerBtn.classList.remove("active");
+                        navMenu.classList.remove("open");
+                    });
+                });
+
+            // ─── Mobile Dropdown Accordion ───
+            document.querySelectorAll(".dropdown").forEach((dropdown) => {
+                const toggle = dropdown.querySelector(".dropdown-toggle");
+                toggle.addEventListener("click", (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        // Close every other dropdown first
+                        document
+                            .querySelectorAll(".dropdown")
+                            .forEach((other) => {
+                                if (other !== dropdown)
+                                    other.classList.remove("open");
+                            });
+                        dropdown.classList.toggle("open");
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>

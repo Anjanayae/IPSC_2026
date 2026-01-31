@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Nearby Attractions IPSA</title>
+  <title>Nearby Attractions IPSC 2026</title>
   <link rel="icon" href="iit_indore.ico" type="image/x-icon">
-  <link rel="stylesheet" href="shared-styles.css">
   <link rel="stylesheet" href="nearby-attractions-enhanced.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -16,40 +16,57 @@
       <img src="assets/iit_indore.svg" class="iit-logo">
       <img src="assets/logo.png" class="logo">
     </div>
-    <ul class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="committee.html">Committee</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Programme</a>
-        <div class="dropdown-menu">
-          <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
-          <a href="keynote-speakers.html">Keynote Speakers</a>
-          <a href="program-glance.html">Program at a Glance</a>
-          <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
-          <a href="submit-abstract.html">Submit Abstract</a>
-        </div>
-      </li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Other Info</a>
-        <div class="dropdown-menu">
-          <a href="city-guide.html">City Guide</a>
-          <a href="nearby-attractions.html">Nearby Attractions</a>
-          <a href="travel.html">Travel</a>
-          <a href="accommodation.html">Accommodation</a>
-          <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
-          <a href="contacts.html">Contact</a>
-        </div>
-      </li>
-    </ul>
-    <a href="registration.html" class="registration-btn">Registration</a>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Nav Links + Registration (slide-down mobile panel) -->
+    <div class="nav-menu" id="navMenu">
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Programme
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
+            <a href="keynote-speakers.html">Keynote Speakers</a>
+            <a href="program-glance.html">Program at a Glance</a>
+            <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
+            <a href="submit-abstract.html">Submit Abstract</a>
+          </div>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Other Info
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="city-guide.html">City Guide</a>
+            <a href="nearby-attractions.html">Nearby Attractions</a>
+            <a href="travel.html">Travel</a>
+            <a href="accommodation.html">Accommodation</a>
+            <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
+            <a href="contacts.html">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <a href="registration.html" class="registration-btn">Registration</a>
+    </div>
   </nav>
 </header>
 
-<!-- Particle Background -->
-<div class="particles" id="particles"></div>
-
 <main class="nearby-attractions-main">
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
+
   <div class="attractions-hero">
     <h1>Nearby Attractions</h1>
     <h2>Explore Beyond Indore</h2>
@@ -64,44 +81,80 @@
 
     <div class="attractions-grid">
       <div class="attraction-item">
-        <img src="assets/Omkareshwar.jpg" alt="Attraction">
-        <h3>Omkareshwar (60 km)</h3>
-        <p>One of the 12 Jyotirlingas temples of India. Located on the island of Mandhata in the Narmada River, this sacred site offers spiritual solace and scenic beauty.</p>
+        <img src="assets/Omkareshwar.jpg" alt="Omkareshwar Temple">
+        <div class="attraction-content-wrapper">
+          <h3>
+            <i class="fas fa-om"></i>
+            Omkareshwar
+            <span class="distance-badge">60 km</span>
+          </h3>
+          <p>One of the 12 Jyotirlingas temples of India. Located on the island of Mandhata in the Narmada River, this sacred site offers spiritual solace and scenic beauty.</p>
+        </div>
       </div>
 
       <div class="attraction-item">
-        <img src="assets/Maheshwar.jpg" alt="Attraction">
-        <h3>Maheshwar (62 km)</h3>
-        <p>An ancient pilgrimage site on the banks of the Narmada River, known for its ghats, temples, and the famous Maheshwar Fort. The town is also renowned for its handwoven textiles.</p>
+        <img src="assets/Maheshwar.jpg" alt="Maheshwar">
+        <div class="attraction-content-wrapper">
+          <h3>
+            <i class="fas fa-archway"></i>
+            Maheshwar
+            <span class="distance-badge">62 km</span>
+          </h3>
+          <p>An ancient pilgrimage site on the banks of the Narmada River, known for its ghats, temples, and the famous Maheshwar Fort. The town is also renowned for its handwoven textiles.</p>
+        </div>
       </div>
 
       <div class="attraction-item">
-        <img src="assets/Mandu.avif" alt="Attraction">
-        <h3>Mandu (98 km)</h3>
-        <p>A hill fort town rich in history, featuring magnificent architectural structures including palaces, mosques, and temples. The scenic landscape and historical significance make it a must-visit destination.</p>
+        <img src="assets/Mandu.avif" alt="Mandu">
+        <div class="attraction-content-wrapper">
+          <h3>
+            <i class="fas fa-fort-awesome"></i>
+            Mandu
+            <span class="distance-badge">98 km</span>
+          </h3>
+          <p>A hill fort town rich in history, featuring magnificent architectural structures including palaces, mosques, and temples. The scenic landscape and historical significance make it a must-visit destination.</p>
+        </div>
       </div>
 
       <div class="attraction-item">
-        <img src="assets/Ujjain.jpg" alt="Attraction">
-        <h3>Ujjain (56 km)</h3>
-        <p>One of the four holiest cities in India, Ujjain is home to the famous Mahakaleshwar Temple. The city has immense spiritual and historical significance in Hindu mythology.</p>
+        <img src="assets/Ujjain.jpg" alt="Ujjain">
+        <div class="attraction-content-wrapper">
+          <h3>
+            <i class="fas fa-place-of-worship"></i>
+            Ujjain
+            <span class="distance-badge">56 km</span>
+          </h3>
+          <p>One of the four holiest cities in India, Ujjain is home to the famous Mahakaleshwar Temple. The city has immense spiritual and historical significance in Hindu mythology.</p>
+        </div>
       </div>
 
       <div class="attraction-item">
-        <img src="assets/Dhubela.jpg" alt="Attraction">
-        <h3>Dhubela (30 km)</h3>
-        <p>A picturesque village perfect for nature lovers, offering peaceful surroundings and opportunities for trekking and outdoor activities.</p>
+        <img src="assets/Dhubela.jpg" alt="Dhubela">
+        <div class="attraction-content-wrapper">
+          <h3>
+            <i class="fas fa-mountain"></i>
+            Dhubela
+            <span class="distance-badge">30 km</span>
+          </h3>
+          <p>A picturesque village perfect for nature lovers, offering peaceful surroundings and opportunities for trekking and outdoor activities.</p>
+        </div>
       </div>
 
       <div class="attraction-item">
-        <img src="assets/Tilcha.jpg" alt="Attraction">
-        <h3>Tincha Falls (45 km)</h3>
-        <p>A scenic waterfall surrounded by lush greenery, ideal for weekend getaways and nature photography.</p>
+        <img src="assets/Tilcha.jpg" alt="Tincha Falls">
+        <div class="attraction-content-wrapper">
+          <h3>
+            <i class="fas fa-water"></i>
+            Tincha Falls
+            <span class="distance-badge">45 km</span>
+          </h3>
+          <p>A scenic waterfall surrounded by lush greenery, ideal for weekend getaways and nature photography.</p>
+        </div>
       </div>
     </div>
 
     <div class="travel-info-section">
-      <h2>Travel Information</h2>
+      <h2><i class="fas fa-info-circle"></i> Travel Information</h2>
       <p>Most of these attractions are easily accessible from Indore by road. We recommend hiring a taxi or joining a guided tour for a comfortable and informative experience. Pack light, comfortable clothing, and don't forget sunscreen and water.</p>
     </div>
   </div>
@@ -109,10 +162,54 @@
 
 <footer>
   <div class="footer-content">
-    <p><i class="fas fa-code"></i> Maintained by Web Team @ DAASE</p>
+    <div class="footer-section">
+      <h3>IPSC 2026</h3>
+      <p>Indian Planetary Science Conference</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-credit">Maintained by Web Team @ DAASE</p>
   </div>
 </footer>
 
 <script src="particles.js"></script>
+<script>
+  // ─── Hamburger Toggle ───
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('open');
+  });
+
+  // Close menu when a plain nav link is clicked (not a dropdown toggle)
+  navMenu.querySelectorAll('.navlinks > li:not(.dropdown) > a, .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('active');
+      navMenu.classList.remove('open');
+    });
+  });
+
+  // ─── Mobile Dropdown Accordion ───
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        // Close every other dropdown first
+        document.querySelectorAll('.dropdown').forEach(other => {
+          if (other !== dropdown) other.classList.remove('open');
+        });
+        dropdown.classList.toggle('open');
+      }
+    });
+  });
+</script>
 </body>
 </html>

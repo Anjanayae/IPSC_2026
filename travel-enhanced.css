@@ -1,164 +1,1120 @@
-@import url('shared-styles.css');
+/* ============================================================
+   RESET & VARIABLES (matching home.css)
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Travel Page Specific Styling */
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #8b5cf6;
+    --accent-color: #ec4899;
+    --light-bg: #f8fafc;
+    --darker-bg: #1e293b;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --space-blue: #0f172a;
+    --cosmic-purple: #7c3aed;
+    --nebula-pink: #f472b6;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   HEADER & NAVBAR (desktop)
+   ============================================================ */
+header {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 30px rgba(99, 102, 241, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    animation: slideDown 0.5s ease-out;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.navbar-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.iit-logo {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+.iit-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* nav-menu wraps both <ul> and the registration btn */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.navlinks a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    transition: width 0.3s ease;
+}
+.navlinks a:hover::after {
+    width: 100%;
+}
+.navlinks a:hover {
+    color: #a5b4fc;
+    transform: translateY(-2px);
+}
+
+/* hide the chevron arrows on desktop */
+.dropdown-arrow {
+    display: none;
+}
+
+/* ─── Registration Button ─── */
+.registration-btn {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 100%
+    );
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.registration-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.6s,
+        height 0.6s;
+}
+.registration-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+.registration-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+.registration-btn:active {
+    transform: translateY(0);
+}
+
+/* ─── Hamburger (hidden on desktop) ─── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+/* animated "X" state */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ─── Dropdown Menu (desktop hover) ─── */
+.dropdown {
+    position: relative;
+}
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    min-width: 220px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    font-size: 0.92rem;
+}
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+.dropdown-menu a:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.15),
+        rgba(139, 92, 246, 0.15)
+    );
+    color: var(--primary-color);
+    font-weight: 600;
+    padding-left: 1.25rem;
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   PARTICLES (matching home page)
+   ============================================================ */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite;
+    opacity: 0;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: var(--opacity);
+    }
+}
+
+/* ============================================================
+   TRAVEL PAGE SPECIFIC
+   ============================================================ */
+.travel-main {
+    background: transparent;
+    position: relative;
+    min-height: 100vh;
+}
+
+.travel-hero {
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    background: transparent;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.travel-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(244, 114, 182, 0.15) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(99, 102, 241, 0.15) 0%,
+            transparent 50%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.travel-hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 80px rgba(165, 180, 252, 0.5);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.travel-hero h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.travel-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── Info Section ─── */
 .info-section {
-  margin: 4rem 0;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 2.5rem;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  animation: fadeInUp 0.8s ease-out;
+    margin: 4rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+    transition: all 0.4s ease;
 }
 
 .info-section:hover {
-  border-color: var(--nebula-pink);
-  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+    border-color: var(--nebula-pink);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .info-section h2 {
-  font-size: 2.2rem;
-  color: white;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  font-family: 'Space Grotesk', sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    font-family: "Space Grotesk", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
+.info-section h2 i {
+    color: var(--nebula-pink);
+}
 
 .info-section p {
-  color: #e2e8f0;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 .info-section em {
-  color: #cbd5e1;
-  font-style: italic;
+    color: #cbd5e1;
+    font-style: italic;
+    font-size: 0.95rem;
 }
 
 .info-section a {
-  color: #a5b4fc;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 .info-section a:hover {
-  color: var(--nebula-pink);
-  border-bottom-color: var(--nebula-pink);
+    color: var(--nebula-pink);
+    border-bottom-color: var(--nebula-pink);
 }
 
+/* ─── Route Cards ─── */
 .route-card {
-  background: rgba(99, 102, 241, 0.1);
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 2rem 0;
-  border-left: 4px solid var(--nebula-pink);
-  transition: all 0.3s ease;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--nebula-pink);
+    transition: all 0.3s ease;
 }
 
 .route-card:hover {
-  background: rgba(99, 102, 241, 0.15);
-  transform: translateX(10px);
+    background: rgba(99, 102, 241, 0.15);
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
 }
 
 .route-card h3 {
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: "Space Grotesk", sans-serif;
 }
 
-.route-card p {
-  color: #cbd5e1;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+.route-card h3 i {
+    color: var(--nebula-pink);
 }
 
-.route-card strong {
-  color: var(--nebula-pink);
+.route-details {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.detail-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-badge i {
+    color: var(--nebula-pink);
 }
 
 .route-card ul {
-  list-style: none;
-  padding-left: 1rem;
+    list-style: none;
+    padding-left: 1rem;
 }
 
 .route-card ul li {
-  color: #e2e8f0;
-  margin: 0.7rem 0;
-  padding-left: 2rem;
-  position: relative;
+    color: #e2e8f0;
+    margin: 0.7rem 0;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.7;
 }
 
 .route-card ul li::before {
-  position: absolute;
-  left: 0;
-  color: var(--nebula-pink);
-  font-size: 1.2rem;
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--nebula-pink);
+    font-size: 1.2rem;
 }
 
+/* ─── Note Box ─── */
 .note {
-  background: rgba(236, 72, 153, 0.1);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--nebula-pink);
-  margin: 2rem 0;
+    background: rgba(236, 72, 153, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--nebula-pink);
+    margin: 2rem 0;
+}
+
+.note p {
+    color: #e2e8f0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+}
+
+.note i {
+    color: var(--nebula-pink);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
 }
 
 .note strong {
-  color: white;
-  display: block;
-  margin-bottom: 0.5rem;
+    color: white;
 }
 
+/* ─── Contact Info ─── */
 .contact-info {
-  background: rgba(99, 102, 241, 0.15);
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 2rem 0;
+    background: rgba(99, 102, 241, 0.15);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 .contact-info h3 {
-  color: white;
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: "Space Grotesk", sans-serif;
 }
+
+.contact-info h3 i {
+    color: var(--nebula-pink);
+}
+
 .contact-info p {
-  color: #e2e8f0;
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .contact-info strong {
-  color: var(--nebula-pink);
-  min-width: 120px;
+    color: var(--nebula-pink);
+    min-width: 120px;
 }
 
-/* Responsive */
+.contact-info a {
+    color: #a5b4fc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--nebula-pink);
+}
+
+/* ─── Pricing Section ─── */
+.pricing-section {
+    margin-top: 2rem;
+}
+
+.pricing-section h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.pricing-section h3 i {
+    color: var(--nebula-pink);
+}
+
+.pricing-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(30, 27, 75, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pricing-table thead {
+    background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.2),
+        rgba(139, 92, 246, 0.2)
+    );
+}
+
+.pricing-table thead th {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pricing-table tbody tr {
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pricing-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.pricing-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.pricing-table tbody td {
+    padding: 1.2rem 1.5rem;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.pricing-table .price {
+    color: var(--nebula-pink);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.booking-note {
+    background: rgba(236, 72, 153, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--nebula-pink);
+    margin-top: 1.5rem;
+    color: #e2e8f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+}
+
+.booking-note i {
+    color: var(--nebula-pink);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.booking-note strong {
+    color: white;
+}
+
+/* ============================================================
+   FOOTER (matching home page)
+   ============================================================ */
+footer {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    color: white;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    margin-top: 0;
+    border-top: 1px solid rgba(99, 102, 241, 0.3);
+    animation: slideUp 0.5s ease-out 0.3s both;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-links a:hover {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    margin: 2rem 0 1.5rem;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: #cbd5e1;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE (≤ 768px)
+   ============================================================ */
 @media (max-width: 768px) {
-  .info-section h2 {
-    font-size: 1.8rem;
-  }
-  
-  .route-card {
-    padding: 1.5rem;
-  }
+    /* ─── Header padding ─── */
+    header {
+        padding: 0.85rem 0;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    /* ─── Logo group – shrink logos ─── */
+    .navbar-logo-group {
+        gap: 0.75rem;
+        margin-right: 0;
+    }
+    .iit-logo {
+        height: 32px;
+    }
+    .logo {
+        height: 42px;
+    }
+
+    /* ─── Show hamburger ─── */
+    .hamburger {
+        display: flex;
+    }
+
+    /* ─── Nav menu – full-width slide-down panel ─── */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(24px);
+        border-top: 1px solid rgba(99, 102, 241, 0.25);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        /* collapsed state */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.35s ease,
+            padding 0.35s ease;
+    }
+
+    .nav-menu.open {
+        max-height: 600px;
+        opacity: 1;
+        padding: 1rem 0 1.25rem;
+    }
+
+    /* ─── Nav links – stacked vertical list ─── */
+    .navlinks {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 1.25rem;
+    }
+
+    .navlinks > li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .navlinks > li:last-child {
+        border-bottom: none;
+    }
+
+    .navlinks > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.85rem 0;
+        font-size: 1rem;
+        color: #e2e8f0;
+    }
+    .navlinks > li > a::after {
+        display: none;
+    }
+    .navlinks > li > a:hover {
+        transform: none;
+        color: #fff;
+    }
+
+    /* show chevrons on mobile */
+    .dropdown-arrow {
+        display: inline-block;
+        font-size: 0.7rem;
+        color: #a5b4fc;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* ─── Dropdown menu – accordion style ─── */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+        background: rgba(30, 27, 75, 0.7);
+        border: none;
+        border-radius: 10px;
+        margin: 0.4rem 0 0.6rem;
+        padding: 0.3rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+            max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0.35s ease;
+        box-shadow: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        max-height: 300px;
+        visibility: visible;
+    }
+
+    /* override desktop hover rule on mobile */
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+    }
+    .dropdown.open .dropdown-menu {
+        visibility: visible;
+    }
+
+    .dropdown-menu a {
+        padding: 0.7rem 1rem;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .dropdown-menu a:hover {
+        background: rgba(99, 102, 241, 0.15);
+        color: #fff;
+        padding-left: 1.2rem;
+        transform: none;
+    }
+
+    /* ─── Registration button inside panel ─── */
+    .registration-btn {
+        display: block;
+        width: calc(100% - 2.5rem);
+        margin: 0.75rem 1.25rem 0;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* ─── Travel Hero Mobile ─── */
+    .travel-hero {
+        padding: 5rem 1.25rem 3.5rem;
+        min-height: auto;
+    }
+
+    .travel-hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .travel-hero h2 {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* ─── Travel Content Mobile ─── */
+    .travel-content {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .info-section {
+        padding: 1.5rem;
+        margin: 2.5rem 0;
+    }
+
+    .info-section h2 {
+        font-size: 1.6rem;
+        flex-wrap: wrap;
+    }
+
+    .info-section p {
+        font-size: 0.95rem;
+    }
+
+    .route-card {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .route-card:hover {
+        transform: translateX(5px);
+    }
+
+    .route-card h3 {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .route-details {
+        gap: 0.75rem;
+    }
+
+    .detail-badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .contact-info {
+        padding: 1.5rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .contact-info strong {
+        min-width: unset;
+    }
+
+    .pricing-table thead th,
+    .pricing-table tbody td {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .pricing-table .price {
+        font-size: 1rem;
+    }
+
+    .booking-note {
+        font-size: 0.88rem;
+    }
+
+    /* ─── Footer Mobile ─── */
+    footer {
+        padding: 2rem 1.25rem 1.5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================================
+   EXTRA-SMALL (≤ 360px)
+   ============================================================ */
+@media (max-width: 360px) {
+    .iit-logo {
+        height: 26px;
+    }
+    .logo {
+        height: 34px;
+    }
+
+    .travel-hero h1 {
+        font-size: 2rem;
+    }
+
+    .travel-hero h2 {
+        font-size: 0.97rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .info-section p {
+        font-size: 0.88rem;
+    }
+
+    .route-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .detail-badge {
+        font-size: 0.8rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.05rem;
+    }
+
+    .pricing-table thead th,
+    .pricing-table tbody td {
+        padding: 0.7rem 0.5rem;
+        font-size: 0.8rem;
+    }
 }
