@@ -1,0 +1,744 @@
+@import url('shared-styles.css');
+
+/* Registration Page Styling - Mobile Responsive */
+
+/* ============================================================
+   NAVBAR MOBILE ENHANCEMENTS (matching home.css)
+   ============================================================ */
+
+/* Desktop navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.navbar-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.iit-logo {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+.iit-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* nav-menu wraps both <ul> and the registration btn */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.navlinks a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease;
+}
+.navlinks a:hover::after {
+    width: 100%;
+}
+.navlinks a:hover {
+    color: #a5b4fc;
+    transform: translateY(-2px);
+}
+
+/* hide the chevron arrows on desktop */
+.dropdown-arrow {
+    display: none;
+}
+
+/* ─── Registration Button ─── */
+.registration-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.registration-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+.registration-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+.registration-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+.registration-btn:active {
+    transform: translateY(0);
+}
+
+/* ─── Hamburger (hidden on desktop) ─── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* animated "X" state */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ─── Dropdown Menu (desktop hover) ─── */
+.dropdown {
+    position: relative;
+}
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    min-width: 220px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    font-size: 0.92rem;
+}
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+.dropdown-menu a:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+    color: var(--primary-color);
+    font-weight: 600;
+    padding-left: 1.25rem;
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   PAGE CONTENT
+   ============================================================ */
+.registration-hero {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+  padding: 6rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.registration-hero::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.registration-hero h1 {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.registration-hero h2 {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.registration-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pricing-section {
+  margin-bottom: 4rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-card.featured {
+  border-color: var(--nebula-pink);
+  box-shadow: 0 10px 30px rgba(244, 114, 182, 0.2);
+}
+
+.pricing-card.featured::before {
+  opacity: 1;
+  background: linear-gradient(90deg, var(--nebula-pink), var(--primary-color));
+}
+
+.pricing-type {
+  color: var(--nebula-pink);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+  vertical-align: super;
+}
+
+.price-period {
+  color: #a5b4fc;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.pricing-features li {
+  color: #cbd5e1;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.register-now-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.register-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.6);
+}
+
+.info-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.info-section h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.info-section p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-section ul {
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+}
+
+.info-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.deadline-notice {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(99, 102, 241, 0.15));
+  border: 2px solid var(--nebula-pink);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.deadline-notice h4 {
+  color: var(--nebula-pink);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.deadline-notice p {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE (≤ 768px) - MATCHING HOME PAGE
+   ============================================================ */
+@media (max-width: 768px) {
+    /* ─── Header padding ─── */
+    header {
+        padding: 0.85rem 0;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    /* ─── Logo group – shrink logos ─── */
+    .navbar-logo-group {
+        gap: 0.75rem;
+        margin-right: 0;
+    }
+    .iit-logo {
+        height: 32px;
+    }
+    .logo {
+        height: 42px;
+    }
+
+    /* ─── Show hamburger ─── */
+    .hamburger {
+        display: flex;
+    }
+
+    /* ─── Nav menu – full-width slide-down panel ─── */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(24px);
+        border-top: 1px solid rgba(99, 102, 241, 0.25);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        /* collapsed state */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease, padding 0.35s ease;
+    }
+
+    .nav-menu.open {
+        max-height: 600px;
+        opacity: 1;
+        padding: 1rem 0 1.25rem;
+    }
+
+    /* ─── Nav links – stacked vertical list ─── */
+    .navlinks {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 1.25rem;
+    }
+
+    .navlinks > li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .navlinks > li:last-child {
+        border-bottom: none;
+    }
+
+    .navlinks > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.85rem 0;
+        font-size: 1rem;
+        color: #e2e8f0;
+    }
+    .navlinks > li > a::after {
+        display: none;
+    }
+    .navlinks > li > a:hover {
+        transform: none;
+        color: #fff;
+    }
+
+    /* show chevrons on mobile */
+    .dropdown-arrow {
+        display: inline-block;
+        font-size: 0.7rem;
+        color: #a5b4fc;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* ─── Dropdown menu – accordion style ─── */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+        background: rgba(30, 27, 75, 0.7);
+        border: none;
+        border-radius: 10px;
+        margin: 0.4rem 0 0.6rem;
+        padding: 0.3rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+        box-shadow: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        max-height: 300px;
+        visibility: visible;
+    }
+
+    /* override desktop hover rule on mobile */
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+    }
+    .dropdown.open .dropdown-menu {
+        visibility: visible;
+    }
+
+    .dropdown-menu a {
+        padding: 0.7rem 1rem;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .dropdown-menu a:hover {
+        background: rgba(99, 102, 241, 0.15);
+        color: #fff;
+        padding-left: 1.2rem;
+        transform: none;
+    }
+
+    /* ─── Registration button inside panel ─── */
+    .registration-btn {
+        display: block;
+        width: calc(100% - 2.5rem);
+        margin: 0.75rem 1.25rem 0;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* ─── Page Content Mobile ─── */
+    .registration-hero {
+        padding: 3rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .registration-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .registration-hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .registration-content {
+        padding: 0 1rem;
+    }
+
+    .pricing-section {
+        margin-bottom: 2rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .pricing-card {
+        padding: 2rem;
+    }
+
+    .pricing-type {
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .price-currency {
+        font-size: 1.3rem;
+    }
+
+    .pricing-features {
+        margin: 1.5rem 0;
+    }
+
+    .pricing-features li {
+        font-size: 0.9rem;
+    }
+
+    .register-now-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .info-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .info-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-section p,
+    .info-section ul {
+        font-size: 0.95rem;
+    }
+
+    .deadline-notice {
+        padding: 1.2rem;
+    }
+
+    .deadline-notice h4 {
+        font-size: 1.1rem;
+    }
+
+    .deadline-notice p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .navbar-logo-group {
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger {
+        margin-left: auto;
+    }
+}
+
+
+
+/* ============================================================
+   EXTRA-SMALL (≤ 360px)
+   ============================================================ */
+@media (max-width: 360px) {
+    .iit-logo {
+        height: 26px;
+    }
+    .logo {
+        height: 34px;
+    }
+
+    .registration-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .registration-hero h2 {
+        font-size: 1rem;
+    }
+
+    .pricing-card {
+        padding: 1.5rem;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .info-section {
+        padding: 1rem;
+    }
+
+    .info-section h3 {
+        font-size: 1.3rem;
+    }
+}

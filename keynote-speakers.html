@@ -1,16 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keynote Speakers IPSC 2026</title>
   <link rel="icon" href="iit_indore.ico" type="image/x-icon">
   <link rel="stylesheet" href="shared-styles.css">
   <link rel="stylesheet" href="keynote-enhanced.css">
+  <link rel="stylesheet" href="keynote-enhanced-mobile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <header>
+            <nav class="navbar">
+                <div class="navbar-logo-group">
+                    <img src="assets/iit_indore.svg" class="iit-logo" />
+                    <img src="assets/logo.png" class="logo" />
+                </div>
+
+                <!-- Hamburger Button -->
+                <button
+                    class="hamburger"
+                    id="hamburgerBtn"
+                    aria-label="Toggle menu"
+                >
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <!-- Nav Links + Registration (slide-down mobile panel) -->
+                <div class="nav-menu" id="navMenu">
+                    <ul class="navlinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Programme
+                                <i
+                                    class="fas fa-chevron-down dropdown-arrow"
+                                ></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a
+                                    href="assets/Brochure_ipsc_2026.jpeg"
+                                    target="_blank"
+                                    >Download Brochure</a
+                                >
+                                <a href="keynote-speakers.html"
+                                    >Keynote Speakers</a
+                                >
+                                <a href="program-glance.html"
+                                    >Program at a Glance</a
+                                >
+                                <a href="detailed-program-schedule.html"
+                                    >Detailed Program Schedule</a
+                                >
+                                <a href="submit-abstract.html"
+                                    >Submit Abstract</a
+                                >
+                            </div>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Other Info
+                                <i
+                                    class="fas fa-chevron-down dropdown-arrow"
+                                ></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="city-guide.html">City Guide</a>
+                                <a href="nearby-attractions.html"
+                                    >Nearby Attractions</a
+                                >
+                                <a href="travel.html">Travel</a>
+                                <a href="accommodation.html">Accommodation</a>
+                                <a href="sponsorship-and-exhibition.html"
+                                    >Sponsorship & Exhibition</a
+                                >
+                                <a href="contacts.html">Contact</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="registration.html" class="registration-btn"
+                        >Registration</a
+                    >
+                </div>
+            </nav>
+        </header>
+<!-- <header>
   <nav class="navbar">
     <div class="navbar-logo-group">
       <img src="assets/iit_indore.svg" class="iit-logo">
@@ -44,7 +123,7 @@
     </ul>
     <a href="registration.html" class="registration-btn">Registration</a>
   </nav>
-</header>
+</header> -->
 
 <main class="keynote-main">
   <div class="keynote-hero">
@@ -72,6 +151,47 @@
 </footer>
 
 <script src="particles.js"></script>
+<script>
+  // ─── Hamburger Toggle ───
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const navMenu = document.getElementById("navMenu");
+
+            hamburgerBtn.addEventListener("click", () => {
+                hamburgerBtn.classList.toggle("active");
+                navMenu.classList.toggle("open");
+            });
+
+            // Close menu when a plain nav link is clicked (not a dropdown toggle)
+            navMenu
+                .querySelectorAll(
+                    ".navlinks > li:not(.dropdown) > a, .dropdown-menu a",
+                )
+                .forEach((link) => {
+                    link.addEventListener("click", () => {
+                        hamburgerBtn.classList.remove("active");
+                        navMenu.classList.remove("open");
+                    });
+                });
+
+            // ─── Mobile Dropdown Accordion ───
+            document.querySelectorAll(".dropdown").forEach((dropdown) => {
+                const toggle = dropdown.querySelector(".dropdown-toggle");
+                toggle.addEventListener("click", (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        // Close every other dropdown first
+                        document
+                            .querySelectorAll(".dropdown")
+                            .forEach((other) => {
+                                if (other !== dropdown)
+                                    other.classList.remove("open");
+                            });
+                        dropdown.classList.toggle("open");
+                    }
+                });
+            });
+
+</script>
 
 </body>
 </html>
