@@ -1170,7 +1170,6 @@ footer {
 /* ================= DESKTOP DEFAULT ================= */
 #navMenu {
     display: flex;
-    align-items: center;
     gap: 2rem;
 }
 
@@ -1257,7 +1256,6 @@ footer {
 
     .navlinks > li > a {
         display: flex;
-        align-items: center;
         justify-content: space-between;
         width: 100%;
         padding: 0.85rem 0;
