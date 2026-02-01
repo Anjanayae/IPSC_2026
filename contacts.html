@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Contact Us IPSA</title>
+  <title>Contact Us IPSC 2026</title>
   <link rel="icon" href="iit_indore.ico" type="image/x-icon">
-  <link rel="stylesheet" href="shared-styles.css">
   <link rel="stylesheet" href="contacts-enhanced.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -16,109 +16,207 @@
       <img src="assets/iit_indore.svg" class="iit-logo">
       <img src="assets/logo.png" class="logo">
     </div>
-    <ul class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <!-- <li><a href="constitution.html">Constitution</a></li> -->
-      <li><a href="committee.html">Committee</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Programme</a>
-        <div class="dropdown-menu">
-          <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
-          <a href="keynote-speakers.html">Keynote Speakers</a>
-          <a href="program-glance.html">Program at a Glance</a>
-          <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
-          <a href="submit-abstract.html">Submit Abstract</a>
-        </div>
-      </li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Other Info</a>
-        <div class="dropdown-menu">
-          <a href="city-guide.html">City Guide</a>
-          <a href="nearby-attractions.html">Nearby Attractions</a>
-          <a href="travel.html">Travel</a>
-          <a href="accommodation.html">Accommodation</a>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Nav Links + Registration (slide-down mobile panel) -->
+    <div class="nav-menu" id="navMenu">
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Programme
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="assets/Brochure_ipsc_2026.jpeg" target="_blank">Download Brochure</a>
+            <a href="keynote-speakers.html">Keynote Speakers</a>
+            <a href="program-glance.html">Program at a Glance</a>
+            <a href="detailed-program-schedule.html">Detailed Program Schedule</a>
+            <a href="submit-abstract.html">Submit Abstract</a>
+          </div>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Other Info
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="city-guide.html">City Guide</a>
+            <a href="nearby-attractions.html">Nearby Attractions</a>
+            <a href="travel.html">Travel</a>
+            <a href="accommodation.html">Accommodation</a>
             <a href="sponsorship-and-exhibition.html">Sponsorship & Exhibition</a>
-          <a href="contacts.html">Contact</a>
-        </div>
-      </li>
-    </ul>
-    <a href="registration.html" class="registration-btn">Registration</a>
+            <a href="contacts.html">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <a href="registration.html" class="registration-btn">Registration</a>
+    </div>
   </nav>
 </header>
 
-        <!-- Particle Background -->
-        <div class="particles" id="particles"></div>
+<main class="contact-main">
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
 
-        <main class="contact-main">
-            <div class="contact-container">
-                <h1>Get in touch...</h1>
+  <div class="contact-hero">
+    <h1>Get in Touch</h1>
+    <h2>We're Here to Help</h2>
+  </div>
 
-                <div class="contact-form-wrapper">
-                    <div class="contact-form">
-                        <h2>Contact Us</h2>
-                        <p>
-                            For queries related to IPSC 2026, please reach out
-                            to us at:
-                        </p>
-                        <p style="margin-top: 20px; font-size: 1.2em">
-                            <a
-                                href="mailto:ipsc2026@iiti.ac.in"
-                                style="
-                                    color: #4caf50;
-                                    text-decoration: none;
-                                    font-weight: 600;
-                                "
-                            >
-                                <i class="fas fa-envelope"></i>
-                                ipsc2026@iiti.ac.in
-                            </a>
-                        </p>
-                    </div>
-                </div>
+  <div class="contact-container">
+    <!-- Conference Contact Section -->
+    <div class="contact-section">
+      <div class="contact-card primary-contact">
+        <div class="card-icon">
+          <i class="fas fa-envelope-open-text"></i>
+        </div>
+        <h2><i class="fas fa-comments"></i> Contact Us for IPSC 2026</h2>
+        <p class="contact-description">
+          For queries related to IPSC 2026, please reach out to us at:
+        </p>
+        <div class="email-highlight">
+          <a href="mailto:ipsc2026@iiti.ac.in">
+            <i class="fas fa-envelope"></i>
+            ipsc2026@iiti.ac.in
+          </a>
+        </div>
+      </div>
+    </div>
 
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <p class="info-intro">For any queries, contact</p>
+    <!-- IPSA Contact Section -->
+    <div class="contact-section">
+      <div class="contact-card">
+        <div class="card-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <h2><i class="fas fa-info-circle"></i> Indian Planetary Science Association</h2>
+        <p class="info-intro">For any queries, contact</p>
 
-                        <div class="info-details">
-                            <p><strong>Secretary,</strong></p>
-                            <p>Indian Planetary Science Association</p>
-                            <p>O/o Physical Research Laboratory,</p>
-                            <p>Navrangpura, Ahmedabad-380009</p>
-                            <p>Gujarat, INDIA</p>
-                        </div>
-
-                        <div class="contact-methods">
-                            <p>
-                                <a href="mailto:ipsa.asso.india@gmail.com"
-                                    >ipsa.asso.india@gmail.com</a
-                                >
-                            </p>
-                            <p>
-                                <a href="mailto:info@ipsa-asso.in"
-                                    >info@ipsa-asso.in</a
-                                >
-                            </p>
-                            <p>
-                                <a href="tel:+919179263144412"
-                                    >(91) 79 2631 4412</a
-                                >
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <div class="info-details">
+          <div class="detail-item">
+            <i class="fas fa-user-tie"></i>
+            <div>
+              <strong>Secretary,</strong>
+              <p>Indian Planetary Science Association</p>
             </div>
-        </main>
+          </div>
 
-        <footer>
-            <div class="footer-content">
-                <p>
-                    <i class="fas fa-code"></i> Maintained by Web Team @ DAASE
-                </p>
+          <div class="detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <p>O/o Physical Research Laboratory,</p>
+              <p>Navrangpura, Ahmedabad-380009</p>
+              <p>Gujarat, INDIA</p>
             </div>
-        </footer>
+          </div>
+        </div>
 
-        <script src="particles.js"></script>
-    </body>
+        <div class="contact-methods">
+          <h3><i class="fas fa-phone-alt"></i> Contact Methods</h3>
+          <div class="contact-links">
+            <a href="mailto:ipsa.asso.india@gmail.com">
+              <i class="fas fa-envelope"></i>
+              ipsa.asso.india@gmail.com
+            </a>
+            <a href="mailto:info@ipsa-asso.in">
+              <i class="fas fa-envelope"></i>
+              info@ipsa-asso.in
+            </a>
+            <a href="tel:+919179263144412">
+              <i class="fas fa-phone"></i>
+              (91) 79 2631 4412
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="contact-section">
+      <div class="quick-links-card">
+        <h2><i class="fas fa-link"></i> Quick Links</h2>
+        <div class="quick-links-grid">
+          <a href="registration.html" class="quick-link">
+            <i class="fas fa-user-plus"></i>
+            <span>Registration</span>
+          </a>
+          <a href="submit-abstract.html" class="quick-link">
+            <i class="fas fa-file-upload"></i>
+            <span>Submit Abstract</span>
+          </a>
+          <a href="accommodation.html" class="quick-link">
+            <i class="fas fa-hotel"></i>
+            <span>Accommodation</span>
+          </a>
+          <a href="travel.html" class="quick-link">
+            <i class="fas fa-plane"></i>
+            <span>Travel Info</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>IPSC 2026</h3>
+      <p>Indian Planetary Science Conference</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-credit">Maintained by Web Team @ DAASE</p>
+  </div>
+</footer>
+
+<script src="particles.js"></script>
+<script>
+  // ─── Hamburger Toggle ───
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('open');
+  });
+
+  // Close menu when a plain nav link is clicked (not a dropdown toggle)
+  navMenu.querySelectorAll('.navlinks > li:not(.dropdown) > a, .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('active');
+      navMenu.classList.remove('open');
+    });
+  });
+
+  // ─── Mobile Dropdown Accordion ───
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        // Close every other dropdown first
+        document.querySelectorAll('.dropdown').forEach(other => {
+          if (other !== dropdown) other.classList.remove('open');
+        });
+        dropdown.classList.toggle('open');
+      }
+    });
+  });
+</script>
+</body>
 </html>

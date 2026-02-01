@@ -1,274 +1,915 @@
-@import url('shared-styles.css');
+/* ============================================================
+   RESET & VARIABLES (matching home.css)
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Gallery Page Styling */
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #8b5cf6;
+    --accent-color: #ec4899;
+    --light-bg: #f8fafc;
+    --darker-bg: #1e293b;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --space-blue: #0f172a;
+    --cosmic-purple: #7c3aed;
+    --nebula-pink: #f472b6;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   HEADER & NAVBAR (desktop)
+   ============================================================ */
+header {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 30px rgba(99, 102, 241, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    animation: slideDown 0.5s ease-out;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.navbar-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.iit-logo {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+.iit-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* nav-menu wraps both <ul> and the registration btn */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.navlinks a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    transition: width 0.3s ease;
+}
+.navlinks a:hover::after {
+    width: 100%;
+}
+.navlinks a:hover {
+    color: #a5b4fc;
+    transform: translateY(-2px);
+}
+
+/* hide the chevron arrows on desktop */
+.dropdown-arrow {
+    display: none;
+}
+
+/* ─── Registration Button ─── */
+.registration-btn {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 100%
+    );
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.registration-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.6s,
+        height 0.6s;
+}
+.registration-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+.registration-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+.registration-btn:active {
+    transform: translateY(0);
+}
+
+/* ─── Hamburger (hidden on desktop) ─── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+/* animated "X" state */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ─── Dropdown Menu (desktop hover) ─── */
+.dropdown {
+    position: relative;
+}
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    min-width: 220px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    font-size: 0.92rem;
+}
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+.dropdown-menu a:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.15),
+        rgba(139, 92, 246, 0.15)
+    );
+    color: var(--primary-color);
+    font-weight: 600;
+    padding-left: 1.25rem;
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   PARTICLES (matching home page)
+   ============================================================ */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite;
+    opacity: 0;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: var(--opacity);
+    }
+}
+
+/* ============================================================
+   GALLERY PAGE SPECIFIC
+   ============================================================ */
+.gallery-main {
+    background: transparent;
+    position: relative;
+    min-height: 100vh;
+}
+
 .gallery-hero {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%),
-              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
-  padding: 6rem 2rem;
-  text-align: center;
-  margin-bottom: 4rem;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    background: transparent;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-hero::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(244, 114, 182, 0.15) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(99, 102, 241, 0.15) 0%,
+            transparent 50%
+        );
+    pointer-events: none;
+    z-index: 0;
 }
 
 .gallery-hero h1 {
-  font-size: 3.5rem;
-  color: white;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  font-family: 'Space Grotesk', sans-serif;
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 80px rgba(165, 180, 252, 0.5);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .gallery-hero h2 {
-  font-size: 1.5rem;
-  color: #cbd5e1;
-  font-weight: 400;
-  position: relative;
-  z-index: 1;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .gallery-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery-description {
-  color: #cbd5e1;
-  font-size: 1.05rem;
-  text-align: center;
-  margin: 2rem 0 4rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    text-align: center;
+    margin: 0 auto 4rem;
+    max-width: 800px;
+    line-height: 1.8;
 }
 
+/* ─── TBD Card ─── */
 .tbd-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 4rem 2rem;
-  border: 2px dashed rgba(99, 102, 241, 0.4);
-  text-align: center;
-  margin: 3rem 0;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    border: 2px dashed rgba(99, 102, 241, 0.4);
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
 .tbd-card::before {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: drift 20s linear infinite;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(99, 102, 241, 0.1) 1px,
+        transparent 1px
+    );
+    background-size: 40px 40px;
+    animation: drift 20s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes drift {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(40px, 40px);
-  }
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(40px, 40px);
+    }
 }
 
 .tbd-icon {
-  font-size: 4rem;
-  color: var(--nebula-pink);
-  margin-bottom: 1rem;
-  animation: float 3s ease-in-out infinite;
-  position: relative;
-  z-index: 2;
+    font-size: 4rem;
+    color: var(--nebula-pink);
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.tbd-content {
+    position: relative;
+    z-index: 2;
 }
 
 .tbd-content h2 {
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  position: relative;
-  z-index: 2;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .tbd-content p {
-  color: #cbd5e1;
-  font-size: 1.1rem;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  font-style: italic;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin: 0;
+    font-style: italic;
 }
 
 .tbd-card:hover {
-  transform: scale(1.02);
-  border-color: var(--nebula-pink);
-  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+    transform: scale(1.02);
+    border-color: var(--nebula-pink);
+    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
 }
 
 /* Gallery Grid (for future use) */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
 }
 
 .gallery-item {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  transition: all 0.3s ease;
-  aspect-ratio: 1 / 1;
-  position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+    aspect-ratio: 1 / 1;
+    position: relative;
 }
 
 .gallery-item:hover {
-  transform: translateY(-8px);
-  border-color: var(--nebula-pink);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    transform: translateY(-8px);
+    border-color: var(--nebula-pink);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
 }
 
 .gallery-item-image {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--cosmic-indigo), var(--cosmic-purple));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--space-blue), var(--cosmic-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .gallery-item-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  color: white;
-  padding: 1rem;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
 }
 
 .gallery-item:hover .gallery-item-title {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Footer */
+/* ============================================================
+   FOOTER (matching home page)
+   ============================================================ */
 footer {
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(99, 102, 241, 0.2);
-  padding: 3rem 2rem;
-  margin-top: 6rem;
-  text-align: center;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    color: white;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    margin-top: 0;
+    border-top: 1px solid rgba(99, 102, 241, 0.3);
+    animation: slideUp 0.5s ease-out 0.3s both;
+    position: relative;
 }
 
-.footer-content p {
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  margin: 0.5rem 0;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .gallery-hero {
-    padding: 3rem 1rem;
-  }
-
-  .gallery-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .gallery-hero h2 {
-    font-size: 1.1rem;
-  }
-
-  .tbd-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .tbd-content h2 {
+.footer-section h3 {
     font-size: 1.5rem;
-  }
-
-  .tbd-icon {
-    font-size: 3rem;
-  }
-
-  .gallery-content {
-    padding: 0 1rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-  }
+    margin-bottom: 0.5rem;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 480px) {
-  .gallery-hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .gallery-hero h2 {
-    font-size: 1rem;
-  }
-
-  .tbd-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .tbd-content h2 {
-    font-size: 1.3rem;
-  }
-
-  .tbd-icon {
-    font-size: 2.5rem;
-  }
-
-  .gallery-description {
-    font-size: 0.95rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+.social-links {
+    display: flex;
     gap: 1rem;
-  }
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.social-links a:hover {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    margin: 2rem 0 1.5rem;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: #cbd5e1;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* ─── Header padding ─── */
+    header {
+        padding: 0.85rem 0;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    /* ─── Logo group – shrink logos ─── */
+    .navbar-logo-group {
+        gap: 0.75rem;
+        margin-right: 0;
+    }
+    .iit-logo {
+        height: 32px;
+    }
+    .logo {
+        height: 42px;
+    }
+
+    /* ─── Show hamburger ─── */
+    .hamburger {
+        display: flex;
+    }
+
+    /* ─── Nav menu – full-width slide-down panel ─── */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(24px);
+        border-top: 1px solid rgba(99, 102, 241, 0.25);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        /* collapsed state */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.35s ease,
+            padding 0.35s ease;
+    }
+
+    .nav-menu.open {
+        max-height: 600px;
+        opacity: 1;
+        padding: 1rem 0 1.25rem;
+    }
+
+    /* ─── Nav links – stacked vertical list ─── */
+    .navlinks {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 1.25rem;
+    }
+
+    .navlinks > li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .navlinks > li:last-child {
+        border-bottom: none;
+    }
+
+    .navlinks > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.85rem 0;
+        font-size: 1rem;
+        color: #e2e8f0;
+    }
+    .navlinks > li > a::after {
+        display: none;
+    }
+    .navlinks > li > a:hover {
+        transform: none;
+        color: #fff;
+    }
+
+    /* show chevrons on mobile */
+    .dropdown-arrow {
+        display: inline-block;
+        font-size: 0.7rem;
+        color: #a5b4fc;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* ─── Dropdown menu – accordion style ─── */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+        background: rgba(30, 27, 75, 0.7);
+        border: none;
+        border-radius: 10px;
+        margin: 0.4rem 0 0.6rem;
+        padding: 0.3rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+            max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0.35s ease;
+        box-shadow: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        max-height: 300px;
+        visibility: visible;
+    }
+
+    /* override desktop hover rule on mobile */
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+    }
+    .dropdown.open .dropdown-menu {
+        visibility: visible;
+    }
+
+    .dropdown-menu a {
+        padding: 0.7rem 1rem;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .dropdown-menu a:hover {
+        background: rgba(99, 102, 241, 0.15);
+        color: #fff;
+        padding-left: 1.2rem;
+        transform: none;
+    }
+
+    /* ─── Registration button inside panel ─── */
+    .registration-btn {
+        display: block;
+        width: calc(100% - 2.5rem);
+        margin: 0.75rem 1.25rem 0;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* ─── Gallery Hero Mobile ─── */
+    .gallery-hero {
+        padding: 5rem 1.25rem 3.5rem;
+        min-height: auto;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .gallery-hero h2 {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* ─── Gallery Content Mobile ─── */
+    .gallery-content {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .gallery-description {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .tbd-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .tbd-icon {
+        font-size: 3rem;
+    }
+
+    .tbd-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .tbd-content p {
+        font-size: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* ─── Footer Mobile ─── */
+    footer {
+        padding: 2rem 1.25rem 1.5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================================
+   EXTRA-SMALL (≤ 360px)
+   ============================================================ */
+@media (max-width: 360px) {
+    .iit-logo {
+        height: 26px;
+    }
+    .logo {
+        height: 34px;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-hero h2 {
+        font-size: 0.97rem;
+    }
+
+    .tbd-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .tbd-icon {
+        font-size: 2.5rem;
+    }
+
+    .tbd-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .tbd-content p {
+        font-size: 0.9rem;
+    }
+
+    .gallery-description {
+        font-size: 0.88rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
 }
