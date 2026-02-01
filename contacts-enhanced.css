@@ -378,6 +378,7 @@ header {
     font-size: 4rem;
     font-weight: 900;
     background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
@@ -730,6 +731,7 @@ footer {
         var(--primary-color),
         var(--secondary-color)
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
