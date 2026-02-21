@@ -1,3 +1,4 @@
+<?php require_once 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +60,7 @@
           </div>
         </li>
       </ul>
-      <a href="registration.html" class="registration-btn">Registration</a>
+      <a href="registration.php" class="registration-btn">Registration</a>
     </div>
   </nav>
 </header>
@@ -80,7 +81,8 @@
       </div>
 
       <form id="registrationForm" class="registration-form" novalidate>
-        <input type="hidden" name="csrf_token" id="csrf_token" value="">
+        <input type="hidden" id="csrf_token" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
 
         <!-- Personal Information Section -->
         <div class="form-section">
@@ -206,26 +208,11 @@
             <select id="registration_type" name="registration_type" required>
               <option value="">Select Registration Type</option>
               <option value="Students/Research Scholars (Indian)">Students/Research Scholars (Indian)</option>
-              <option value="Faculty/Scientists/Research Staffs/Professionals/Experts (Indian)">Faculty/Scientists/Research Staffs/Professionals/Experts (Indian)</option>
-              <option value="Students/Research Scholars/Faculty/Scientists/Research Staffs (Foreign)">Students/Research Scholars/Faculty/Scientists/Research Staffs (Foreign)</option>
+              <option value="Faculty/Scientists/Research Staffs (Indian)">Faculty/Scientists/Research Staffs (Indian)</option>
+              <option value="Postdoc">Postdoc</option>
               <option value="Industry">Industry</option>
             </select>
             <span class="error-message" id="registration_type-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label>Do you wish to apply for the "Pre-conference School"? <span class="required">*</span></label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="pre_conference_school" value="Yes" required>
-                <span>Yes</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="pre_conference_school" value="No" required>
-                <span>No</span>
-              </label>
-            </div>
-            <span class="error-message" id="pre_conference_school-error"></span>
           </div>
         </div>
 
@@ -238,21 +225,130 @@
 
           <div class="info-box">
             <i class="fas fa-info-circle"></i>
-            <p>Registration fee payment as per the guidelines available on the conference website.</p>
+            <div>
+              <p><strong>Payment Instructions:</strong></p>
+              <p>Registration is mandatory for all participants: invited speakers, contributed speakers, session chairs, poster presenters and those who wish to attend the sessions. All amounts indicated below are including GST.
+
+</p>
+              
+              <p style="margin-top: 15px; margin-bottom: 10px;"><strong>Registration Fee Structure:</strong></p>
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+                <tr >
+                  <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Registration Type</th>
+                  <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Amount (Rs.)</th>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 10px;">Students/Research Scholars (Indian)</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3,000</td>
+                </tr>
+                <tr >
+                  <td style="border: 1px solid #ddd; padding: 10px;">Faculty/Scientists/Research Staffs (Indian)</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 10px;">Postdoc</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
+                </tr>
+                <tr >
+                  <td style="border: 1px solid #ddd; padding: 10px;">Industry</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10,000</td>
+                </tr>
+              </table>
+              
+              <p style="margin-top: 20px; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong style="font-size: 16px;">Step 1: Fee Payment</strong></p>
+              <p style="margin-bottom: 15px;"><strong>MODE OF PAYMENT of registration fee</strong></p>
+              
+              <div style="padding: 15px; border-left: 4px solid #007bff; margin-bottom: 20px;">
+                <p style="margin: 0 0 10px 0;"><strong>Mode 1: Payment through Paytm</strong></p>
+                <ol style="margin-top: 10px; padding-left: 20px;">
+                  <li>Please visit the home page of IIT Indore website.</li>
+                  <li>Go to PayTm link option in the facilities menu.</li>
+                  <li>In "select your Institute's area": go to Registration for events – select "workshop/conference".</li>
+                  <li>Select fee details: Participants may fill in the required details and proceed further. Please fill "IPSC 2026" for the title of the event.</li>
+                </ol>
+              </div>
+              
+              <div style="padding: 15px; border-left: 4px solid #28a745; margin-bottom: 20px;">
+                <p style="margin: 0 0 15px 0;"><strong>Mode 2: Payment through QR Code or UPI</strong></p>
+                <p>Scan the QR code or use the UPI ID given below to pay the registration fee.</p>
+                <div style="text-align: center; margin: 20px 0;">
+                  <img src="assets/qr.png" alt="QR Code for Payment" style="max-width: 250px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                </div>
+              </div>
+              
+              <div style="padding: 15px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
+                <p style="margin: 0 0 15px 0;"><strong>Mode 3: Direct RTGS Payment</strong></p>
+                <p>Alternatively, you can pay through RTGS directly. Here are the details given below:</p>
+                <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold; width: 40%;">Name of account holder:</td>
+                    <td style="padding: 8px;">Registrar IIT Indore</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">Agency Name (CPMS):</td>
+                    <td style="padding: 8px;">Indian Institute of Technology Indore</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">Agency code (CPMS):</td>
+                    <td style="padding: 8px;">IITIND</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">Bank Name:</td>
+                    <td style="padding: 8px;">Canara Bank</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">Branch Name:</td>
+                    <td style="padding: 8px;">Simrol IIT Branch</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">Account Number:</td>
+                    <td style="padding: 8px;">1476101027440</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">Account Type:</td>
+                    <td style="padding: 8px;">Saving account</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">MICR Code:</td>
+                    <td style="padding: 8px;">452015026</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">IFSC Code:</td>
+                    <td style="padding: 8px;">CNRB0006223</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; font-weight: bold;">SWIFT Code:</td>
+                    <td style="padding: 8px;">CNRBINBBISG</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <p style="padding-top: 15px; border-top: 1px solid #ddd;"><strong>After Payment and Form Submission:</strong></p>
+              <p>Please send an email to <strong>ipsc2026@iiti.ac.in</strong> with the following details:</p>
+              <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Subject:</strong> registration fee - [Your Name]</li>
+                <li><strong>Content should include:</strong>
+                  <ul style="margin-top: 8px;">
+                    <li>Payment Mode </li>
+                    <li>Screenshot of the payment proof/receipt</li>
+                    <li>Abstract ID (or N/A if no paper submitted)</li>
+                    <li>Your full name</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="payment_reference">Payment Reference Number <span class="required">*</span></label>
-              <input type="text" id="payment_reference" name="payment_reference" placeholder="Enter reference number or NA" required>
-              <small class="help-text">Write NA in case of On Spot payment</small>
+              <input type="text" id="payment_reference" name="payment_reference" placeholder="Enter reference number" required>
               <span class="error-message" id="payment_reference-error"></span>
             </div>
 
             <div class="form-group">
               <label for="amount_transferred">Amount Transferred <span class="required">*</span></label>
               <input type="number" id="amount_transferred" name="amount_transferred" placeholder="0" step="0.01" min="0" required>
-              <small class="help-text">Write 0 in case of On Spot payment</small>
               <span class="error-message" id="amount_transferred-error"></span>
             </div>
           </div>
@@ -263,10 +359,6 @@
               <label class="radio-label">
                 <input type="radio" name="payment_status" value="Already Paid" required>
                 <span>Already Paid</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="payment_status" value="On Spot" required>
-                <span>On Spot</span>
               </label>
             </div>
             <span class="error-message" id="payment_status-error"></span>

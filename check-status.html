@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Registration Status - IPSC 2026</title>
+  <link rel="icon" href="iit_indore.ico" type="image/x-icon">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .check-status-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    
+    .status-hero {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+    }
+    
+    .status-hero h1 {
+      font-size: 2.5rem;
+      color: white;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .status-hero p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+    
+    .check-form {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 2.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 10px;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--nebula-pink);
+      box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+    }
+    
+    .check-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .check-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+    }
+    
+    .status-result {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 2.5rem;
+      margin-top: 2rem;
+      display: none;
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .status-pending {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 2px solid rgba(245, 158, 11, 0.4);
+    }
+    
+    .status-approved {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border: 2px solid rgba(16, 185, 129, 0.4);
+    }
+    
+    .status-rejected {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 2px solid rgba(239, 68, 68, 0.4);
+    }
+    
+    .info-row {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .info-row:last-child {
+      border-bottom: none;
+    }
+    
+    .info-label {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    
+    .info-value {
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+    
+    .error-message {
+      background: rgba(239, 68, 68, 0.15);
+      border: 2px solid #ef4444;
+      color: #fca5a5;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="navbar-logo-group">
+      <img src="assets/iit_indore.svg" class="iit-logo">
+      <img src="assets/logo.png" class="logo">
+    </div>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="registration.php">Registration</a></li>
+      <li><a href="check-status.html">Check Status</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="particles" id="particles"></div>
+
+<main>
+  <div class="check-status-container">
+    <div class="status-hero">
+      <h1>Check Registration Status</h1>
+      <p>Enter your details to view your registration status</p>
+    </div>
+    
+    <div class="check-form">
+      <form id="checkStatusForm">
+        <div class="form-group">
+          <label for="registration_id">Registration ID</label>
+          <input type="text" id="registration_id" name="registration_id" placeholder="IPSC-000123" required>
+          <small style="color: #94a3b8; font-size: 0.85rem; margin-top: 0.5rem; display: block;">
+            Format: IPSC-XXXXXX (e.g., IPSC-000123)
+          </small>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+        
+        <button type="submit" class="check-btn">
+          <i class="fas fa-search"></i> Check Status
+        </button>
+      </form>
+      
+      <div id="errorMessage" class="error-message"></div>
+    </div>
+    
+    <div id="statusResult" class="status-result">
+      <h2 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">
+        <i class="fas fa-info-circle"></i> Registration Details
+      </h2>
+      
+      <div id="statusBadge"></div>
+      
+      <div id="statusInfo"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2026 IPSC. All rights reserved.</p>
+    <p><i class="fas fa-code"></i> Maintained by Web Team @ DAASE</p>
+  </div>
+</footer>
+
+<script src="particles.js"></script>
+<script>
+document.getElementById('checkStatusForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(this);
+  const errorDiv = document.getElementById('errorMessage');
+  const resultDiv = document.getElementById('statusResult');
+  
+  // Hide previous results
+  errorDiv.style.display = 'none';
+  resultDiv.style.display = 'none';
+  
+  try {
+    const response = await fetch('check_status.php', {
+      method: 'POST',
+      body: formData
+    });
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      displayStatus(result.data);
+    } else {
+      errorDiv.textContent = result.message;
+      errorDiv.style.display = 'block';
+    }
+  } catch (error) {
+    errorDiv.textContent = 'An error occurred. Please try again.';
+    errorDiv.style.display = 'block';
+  }
+});
+
+function displayStatus(data) {
+  const resultDiv = document.getElementById('statusResult');
+  const badgeDiv = document.getElementById('statusBadge');
+  const infoDiv = document.getElementById('statusInfo');
+  
+  // Status badge
+  let badgeClass = 'status-pending';
+  let badgeText = 'PENDING VERIFICATION';
+  let statusIcon = 'fa-clock';
+  
+  if (data.approval_status === 'approved') {
+    badgeClass = 'status-approved';
+    badgeText = 'APPROVED';
+    statusIcon = 'fa-check-circle';
+  } else if (data.approval_status === 'rejected') {
+    badgeClass = 'status-rejected';
+    badgeText = 'REJECTED';
+    statusIcon = 'fa-times-circle';
+  }
+  
+  badgeDiv.innerHTML = `<span class="status-badge ${badgeClass}">
+    <i class="fas ${statusIcon}"></i> ${badgeText}
+  </span>`;
+  
+  // Registration info
+  let infoHTML = `
+    <div class="info-row">
+      <span class="info-label">Registration ID:</span>
+      <span class="info-value">${data.registration_id}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Name:</span>
+      <span class="info-value">${data.name}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Email:</span>
+      <span class="info-value">${data.email}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Registration Type:</span>
+      <span class="info-value">${data.registration_type}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Payment Status:</span>
+      <span class="info-value">${data.payment_status}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Registration Date:</span>
+      <span class="info-value">${data.registration_date}</span>
+    </div>
+  `;
+  
+  if (data.approval_status === 'rejected' && data.rejection_reason) {
+    infoHTML += `
+      <div style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1rem; margin-top: 1rem; border-radius: 8px;">
+        <strong style="color: #fca5a5;">Rejection Reason:</strong><br>
+        <span style="color: #cbd5e1;">${data.rejection_reason}</span>
+      </div>
+    `;
+  } else if (data.approval_status === 'pending') {
+    infoHTML += `
+      <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid #fbbf24; padding: 1rem; margin-top: 1rem; border-radius: 8px;">
+        <span style="color: #cbd5e1;">Your registration is being reviewed. You will receive an email notification once the verification is complete.</span>
+      </div>
+    `;
+  }
+  
+  infoDiv.innerHTML = infoHTML;
+  resultDiv.style.display = 'block';
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>
