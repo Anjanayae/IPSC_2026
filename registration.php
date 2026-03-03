@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="shared-styles.css">
   <link rel="stylesheet" href="registration-form.css">
   <link rel="stylesheet" href="registration-mobile.css">
-  <link rel=""stylesheet href="registration-enhanced.css">
+  <link rel="stylesheet" href="registration-enhanced.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -225,13 +225,14 @@
 
           <div class="info-box">
             <i class="fas fa-info-circle"></i>
-            <div>
+            <div class="info-box-content">
               <p><strong>Payment Instructions:</strong></p>
               <p>Registration is mandatory for all participants: invited speakers, contributed speakers, session chairs, poster presenters and those who wish to attend the sessions. All amounts indicated below are including GST.
 
 </p>
               
               <p style="margin-top: 15px; margin-bottom: 10px;"><strong>Registration Fee Structure:</strong></p>
+              <div class="table-scroll-wrapper">
               <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
                 <tr >
                   <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Registration Type</th>
@@ -254,6 +255,7 @@
                   <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10,000</td>
                 </tr>
               </table>
+              </div>
               
               <p style="margin-top: 20px; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong style="font-size: 16px;">Step 1: Fee Payment</strong></p>
               <p style="margin-bottom: 15px;"><strong>MODE OF PAYMENT of registration fee</strong></p>
@@ -279,6 +281,7 @@
               <div style="padding: 15px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
                 <p style="margin: 0 0 15px 0;"><strong>Mode 3: Direct RTGS Payment</strong></p>
                 <p>Alternatively, you can pay through RTGS directly. Here are the details given below:</p>
+                <div class="table-scroll-wrapper">
                 <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
                   <tr>
                     <td style="padding: 8px; font-weight: bold; width: 40%;">Name of account holder:</td>
@@ -321,9 +324,10 @@
                     <td style="padding: 8px;">CNRBINBBISG</td>
                   </tr>
                 </table>
+                </div>
               </div>
               
-              <div style="
+              <div class="important-notice" style="
                 margin-top: 25px;
                 background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
                 border: 2px solid #f0a500;
@@ -337,7 +341,7 @@
               ">
                 <div style="
                   position: absolute;
-                  top: -12px;
+                  top: 10px;
                   right: 18px;
                   background: #e63900;
                   color: #fff;

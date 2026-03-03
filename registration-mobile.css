@@ -3,10 +3,9 @@
 /* Registration Page Styling - Mobile Responsive */
 
 /* ============================================================
-   NAVBAR MOBILE ENHANCEMENTS (matching home.css)
+   NAVBAR DESKTOP DEFAULTS
    ============================================================ */
 
-/* Desktop navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -40,7 +39,6 @@
     transform: scale(1.05);
 }
 
-/* nav-menu wraps both <ul> and the registration btn */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -84,12 +82,10 @@
     transform: translateY(-2px);
 }
 
-/* hide the chevron arrows on desktop */
 .dropdown-arrow {
     display: none;
 }
 
-/* ─── Registration Button ─── */
 .registration-btn {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: #fff;
@@ -452,36 +448,63 @@
 }
 
 /* ============================================================
-   MOBILE RESPONSIVE (≤ 768px) - MATCHING HOME PAGE
+   INFO BOX CONTENT & TABLE WRAPPER (all viewports)
+   ============================================================ */
+.info-box-content {
+    flex: 1;
+    min-width: 0; /* prevent flex child overflow */
+    overflow: hidden;
+}
+
+.table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 0.5rem;
+}
+
+.table-scroll-wrapper table {
+    min-width: 320px;
+}
+
+.important-notice {
+    position: relative;
+}
+
+
+/* ============================================================
+   TABLET RESPONSIVE (≤ 768px)
    ============================================================ */
 @media (max-width: 768px) {
-    /* ─── Header padding ─── */
+    /* ─── Header ─── */
     header {
         padding: 0.85rem 0;
     }
 
     .navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         padding: 0 1rem;
     }
 
-    /* ─── Logo group – shrink logos ─── */
     .navbar-logo-group {
+        display: flex;
+        align-items: center;
         gap: 0.75rem;
         margin-right: 0;
     }
-    .iit-logo {
-        height: 32px;
-    }
-    .logo {
-        height: 42px;
-    }
+    .iit-logo { height: 32px; }
+    .logo     { height: 42px; }
 
     /* ─── Show hamburger ─── */
     .hamburger {
         display: flex;
+        margin-left: auto;
     }
 
-    /* ─── Nav menu – full-width slide-down panel ─── */
+    /* ─── Nav menu – slide-down panel ─── */
     .nav-menu {
         position: absolute;
         top: 100%;
@@ -493,33 +516,29 @@
         flex-direction: column;
         align-items: stretch;
         padding: 0;
-        /* collapsed state */
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease, padding 0.35s ease;
+        transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.35s ease,
+                    padding 0.35s ease;
     }
-
     .nav-menu.open {
         max-height: 600px;
         opacity: 1;
         padding: 1rem 0 1.25rem;
     }
 
-    /* ─── Nav links – stacked vertical list ─── */
+    /* ─── Nav links – stacked ─── */
     .navlinks {
         flex-direction: column;
         gap: 0;
         padding: 0 1.25rem;
     }
-
     .navlinks > li {
         border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
-    .navlinks > li:last-child {
-        border-bottom: none;
-    }
-
+    .navlinks > li:last-child { border-bottom: none; }
     .navlinks > li > a {
         display: flex;
         align-items: center;
@@ -529,27 +548,18 @@
         font-size: 1rem;
         color: #e2e8f0;
     }
-    .navlinks > li > a::after {
-        display: none;
-    }
-    .navlinks > li > a:hover {
-        transform: none;
-        color: #fff;
-    }
+    .navlinks > li > a::after { display: none; }
+    .navlinks > li > a:hover  { transform: none; color: #fff; }
 
-    /* show chevrons on mobile */
     .dropdown-arrow {
         display: inline-block;
         font-size: 0.7rem;
         color: #a5b4fc;
         transition: transform 0.3s ease;
     }
+    .dropdown.open .dropdown-arrow { transform: rotate(180deg); }
 
-    .dropdown.open .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-
-    /* ─── Dropdown menu – accordion style ─── */
+    /* ─── Dropdown accordion ─── */
     .dropdown-menu {
         position: static;
         opacity: 1;
@@ -562,24 +572,20 @@
         padding: 0.3rem 0;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    visibility 0.35s ease;
         box-shadow: none;
     }
-
     .dropdown.open .dropdown-menu {
         max-height: 300px;
         visibility: visible;
     }
-
-    /* override desktop hover rule on mobile */
     .dropdown:hover .dropdown-menu {
         opacity: 1;
         visibility: hidden;
         transform: none;
     }
-    .dropdown.open .dropdown-menu {
-        visibility: visible;
-    }
+    .dropdown.open .dropdown-menu { visibility: visible; }
 
     .dropdown-menu a {
         padding: 0.7rem 1rem;
@@ -594,7 +600,7 @@
         transform: none;
     }
 
-    /* ─── Registration button inside panel ─── */
+    /* ─── Registration button in nav ─── */
     .registration-btn {
         display: block;
         width: calc(100% - 2.5rem);
@@ -604,141 +610,399 @@
         font-size: 0.95rem;
     }
 
-    /* ─── Page Content Mobile ─── */
+    /* ============================================================
+       PAGE HERO
+       ============================================================ */
     .registration-hero {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem 2rem;
         margin-bottom: 2rem;
+        border-radius: 14px;
+    }
+    .registration-hero h1 { font-size: 2rem; }
+    .registration-hero h2 { font-size: 1.05rem; }
+
+    /* ============================================================
+       FORM CONTENT
+       ============================================================ */
+    .registration-content {
+        padding: 0 0.75rem 3rem;
     }
 
-    .registration-hero h1 {
-        font-size: 2.2rem;
+    .form-container {
+        padding: 1.5rem 1rem;
+        border-radius: 14px;
     }
 
-    .registration-hero h2 {
-        font-size: 1.1rem;
+    .form-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
     }
+    .form-header h2 { font-size: 1.5rem; }
+    .form-header p   { font-size: 0.9rem; }
+
+    /* ─── Form Sections ─── */
+    .form-section {
+        padding: 1.25rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .section-title {
+        font-size: 1.15rem;
+        gap: 0.6rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.6rem;
+    }
+    .section-title i { font-size: 1rem; }
+
+    /* ─── Form Rows: single column on mobile ─── */
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem 0.9rem;
+        font-size: 16px; /* prevents iOS zoom on focus */
+        border-radius: 8px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .radio-label {
+        padding: 0.6rem 0;
+    }
+
+    /* ============================================================
+       INFO BOX (Payment Instructions) – key mobile fix
+       ============================================================ */
+    .info-box {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.75rem;
+        border-radius: 10px;
+    }
+
+    .info-box > i {
+        font-size: 1.4rem;
+    }
+
+    .info-box p {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* ─── Inline fee table responsiveness ─── */
+    .info-box table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.85rem !important;
+    }
+
+    .info-box table th,
+    .info-box table td {
+        padding: 8px 6px !important;
+        font-size: 0.82rem !important;
+        word-break: break-word !important;
+    }
+
+    .info-box table th {
+        white-space: nowrap !important;
+    }
+
+    /* ─── Payment mode boxes (inline-styled divs) ─── */
+    .info-box div[style*="border-left"] {
+        padding: 12px 10px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .info-box div[style*="border-left"] p {
+        font-size: 0.88rem !important;
+    }
+
+    .info-box div[style*="border-left"] ol {
+        padding-left: 16px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .info-box div[style*="border-left"] li {
+        font-size: 0.85rem !important;
+        margin-bottom: 6px;
+    }
+
+    /* ─── QR Code responsive ─── */
+    .info-box img[alt*="QR"] {
+        max-width: 180px !important;
+        width: 60% !important;
+    }
+
+    /* ─── RTGS bank details table ─── */
+    .info-box table td[style*="font-weight: bold"] {
+        display: block !important;
+        padding-bottom: 2px !important;
+        font-size: 0.8rem !important;
+        color: #a5b4fc !important;
+    }
+
+    /* ─── Important notice box (Step 2 warning) ─── */
+    .info-box div[style*="border-left: 6px solid"] {
+        padding: 14px 12px !important;
+        border-radius: 8px !important;
+    }
+
+    .info-box div[style*="border-left: 6px solid"] p {
+        font-size: 0.85rem !important;
+    }
+
+    .info-box div[style*="border-left: 6px solid"] ul {
+        margin-left: 10px !important;
+    }
+
+    .info-box div[style*="border-left: 6px solid"] li {
+        font-size: 0.85rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* ─── "IMPORTANT" badge position fix ─── */
+    .info-box div[style*="position: absolute"] {
+        position: static !important;
+        display: inline-block !important;
+        margin-bottom: 10px !important;
+        border-radius: 6px !important;
+    }
+
+    /* ─── Important notice box override ─── */
+    .important-notice {
+        padding: 14px 12px !important;
+        border-radius: 8px !important;
+        overflow: visible !important;
+    }
+
+    .important-notice > div[style*="position: absolute"] {
+        position: static !important;
+        display: inline-block !important;
+        margin-bottom: 10px !important;
+        border-radius: 6px !important;
+        top: auto !important;
+        right: auto !important;
+    }
+
+    /* ─── Table scroll wrapper mobile ─── */
+    .table-scroll-wrapper {
+        margin: 0 -0.25rem;
+        padding: 0 0.25rem;
+    }
+
+    /* ─── Info box content ─── */
+    .info-box-content {
+        width: 100%;
+    }
+
+    /* ============================================================
+       SUBMIT & MESSAGES
+       ============================================================ */
+    .form-actions {
+        margin-top: 1.5rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .form-message {
+        padding: 1rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    /* ============================================================
+       PRICING & INFO SECTIONS
+       ============================================================ */
+    .pricing-section  { margin-bottom: 2rem; }
+    .pricing-grid     { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pricing-card     { padding: 1.5rem; }
+    .pricing-type     { font-size: 1rem; }
+    .price            { font-size: 2.5rem; }
+    .price-currency   { font-size: 1.3rem; }
+    .pricing-features { margin: 1.5rem 0; }
+    .pricing-features li { font-size: 0.9rem; }
+    .register-now-btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+
+    .info-section     { padding: 1.5rem; margin-bottom: 2rem; }
+    .info-section h3  { font-size: 1.5rem; margin-bottom: 1rem; }
+    .info-section p,
+    .info-section ul  { font-size: 0.95rem; }
+
+    .deadline-notice    { padding: 1.2rem; }
+    .deadline-notice h4 { font-size: 1.1rem; }
+    .deadline-notice p  { font-size: 1rem; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+    }
+    .footer-content p {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ============================================================
+   SMALL PHONES (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    .registration-hero {
+        padding: 2.5rem 0.75rem 1.5rem;
+        border-radius: 10px;
+    }
+    .registration-hero h1 { font-size: 1.65rem; }
+    .registration-hero h2 { font-size: 0.95rem; }
 
     .registration-content {
-        padding: 0 1rem;
+        padding: 0 0.5rem 2rem;
     }
 
-    .pricing-section {
-        margin-bottom: 2rem;
+    .form-container {
+        padding: 1.25rem 0.75rem;
+        border-radius: 10px;
     }
 
-    .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .form-header h2 { font-size: 1.3rem; }
+    .form-header p   { font-size: 0.85rem; }
+
+    .form-section {
+        padding: 1rem 0.75rem;
+        margin-bottom: 1.25rem;
+        border-radius: 10px;
     }
 
-    .pricing-card {
-        padding: 2rem;
+    .section-title {
+        font-size: 1.05rem;
+        flex-wrap: wrap;
+        gap: 0.4rem;
     }
 
-    .pricing-type {
-        font-size: 1rem;
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem 0.75rem;
+        font-size: 16px;
     }
 
-    .price {
-        font-size: 2.5rem;
+    /* Smaller info-box on tiny screens */
+    .info-box {
+        padding: 0.75rem;
     }
 
-    .price-currency {
-        font-size: 1.3rem;
+    .info-box table th,
+    .info-box table td {
+        padding: 6px 4px !important;
+        font-size: 0.78rem !important;
     }
 
-    .pricing-features {
-        margin: 1.5rem 0;
+    .info-box img[alt*="QR"] {
+        max-width: 150px !important;
+        width: 55% !important;
     }
 
-    .pricing-features li {
-        font-size: 0.9rem;
-    }
-
-    .register-now-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.95rem;
-    }
-
-    .info-section {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .info-section h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .info-section p,
-    .info-section ul {
-        font-size: 0.95rem;
-    }
-
-    .deadline-notice {
-        padding: 1.2rem;
-    }
-
-    .deadline-notice h4 {
-        font-size: 1.1rem;
-    }
-
-    .deadline-notice p {
-        font-size: 1rem;
-    }
-}
-@media (max-width: 768px) {
-    .navbar {
+    /* Bank details: stack label/value */
+    .info-box table tr {
         display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
+        flex-direction: column !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        padding: 6px 0 !important;
+    }
+    .info-box table tr td {
+        border: none !important;
+        padding: 2px 4px !important;
+        display: block !important;
     }
 
-    .navbar-logo-group {
-        display: flex;
-        align-items: center;
+    /* Important notice extra-small fix */
+    .important-notice {
+        padding: 12px 10px !important;
+        margin-top: 15px !important;
     }
 
-    .hamburger {
-        margin-left: auto;
+    .important-notice p {
+        font-size: 0.82rem !important;
     }
+
+    .important-notice ul {
+        margin-left: 10px !important;
+    }
+
+    .important-notice span[style*="font-family: monospace"] {
+        font-size: 0.75rem !important;
+        word-break: break-all !important;
+    }
+
+    .submit-btn {
+        font-size: 0.95rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .pricing-card { padding: 1.25rem; }
+    .price { font-size: 2rem; }
+    .info-section { padding: 1rem; }
+    .info-section h3 { font-size: 1.3rem; }
+
+    footer { padding: 1.5rem 0.75rem; margin-top: 2rem; }
 }
-
 
 
 /* ============================================================
    EXTRA-SMALL (≤ 360px)
    ============================================================ */
 @media (max-width: 360px) {
-    .iit-logo {
-        height: 26px;
-    }
-    .logo {
-        height: 34px;
+    .iit-logo { height: 26px; }
+    .logo     { height: 34px; }
+
+    .registration-hero h1 { font-size: 1.4rem; }
+    .registration-hero h2 { font-size: 0.85rem; }
+
+    .form-container { padding: 1rem 0.6rem; }
+    .form-section   { padding: 0.75rem 0.5rem; }
+
+    .form-header h2 { font-size: 1.15rem; }
+    .section-title  { font-size: 0.95rem; }
+
+    .info-box div[style*="border-left"] {
+        padding: 8px !important;
     }
 
-    .registration-hero h1 {
-        font-size: 1.8rem;
+    .info-box div[style*="border-left: 6px solid"] {
+        padding: 10px 8px !important;
     }
 
-    .registration-hero h2 {
-        font-size: 1rem;
-    }
-
-    .pricing-card {
-        padding: 1.5rem;
-    }
-
-    .price {
-        font-size: 2rem;
-    }
-
-    .info-section {
-        padding: 1rem;
-    }
-
-    .info-section h3 {
-        font-size: 1.3rem;
-    }
+    .pricing-card { padding: 1rem; }
+    .price        { font-size: 1.8rem; }
 }
