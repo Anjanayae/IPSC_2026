@@ -557,7 +557,6 @@ header {
 }
 
 .room-details ul li::before {
-    content: "✓";
     position: absolute;
     left: 0;
     color: var(--nebula-pink);

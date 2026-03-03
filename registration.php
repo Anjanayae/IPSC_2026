@@ -323,19 +323,66 @@
                 </table>
               </div>
               
-              <p style="padding-top: 15px; border-top: 1px solid #ddd;"><strong>After Payment and Form Submission:</strong></p>
-              <p>Please send an email to <strong>ipsc2026@iiti.ac.in</strong> with the following details:</p>
-              <ul style="margin-left: 20px; margin-top: 10px;">
-                <li><strong>Subject:</strong> registration fee - [Your Name]</li>
-                <li><strong>Content should include:</strong>
-                  <ul style="margin-top: 8px;">
-                    <li>Payment Mode </li>
-                    <li>Screenshot of the payment proof/receipt</li>
-                    <li>Abstract ID (or N/A if no paper submitted)</li>
-                    <li>Your full name</li>
-                  </ul>
-                </li>
-              </ul>
+              <div style="
+                margin-top: 25px;
+                background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+                border: 2px solid #f0a500;
+                border-left: 6px solid #e63900;
+                border-radius: 10px;
+                padding: 20px 24px;
+                box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18), 0 1px 4px rgba(0,0,0,0.08);
+                animation: pulseAttention 2s ease-in-out 3;
+                position: relative;
+                overflow: hidden;
+              ">
+                <div style="
+                  position: absolute;
+                  top: -12px;
+                  right: 18px;
+                  background: #e63900;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: 800;
+                  letter-spacing: 1.5px;
+                  padding: 4px 14px;
+                  border-radius: 0 0 8px 8px;
+                  text-transform: uppercase;
+                ">IMPORTANT</div>
+
+                <p style="font-size: 17px; font-weight: 800; color: #b30000; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 22px;">&#9888;&#65039;</span>
+                  Step 2: After Payment &amp; Form Submission
+                </p>
+
+                <p style="margin-bottom: 10px; color: #333;">
+                  Please send an email to
+                  <a href="mailto:ipsc2026@iiti.ac.in" style="color: #0056b3; font-weight: 700; text-decoration: underline;">ipsc2026@iiti.ac.in</a>
+                  with the following details:
+                </p>
+
+                <ul style="margin-left: 20px; color: #222;">
+                  <li style="margin-bottom: 6px;">
+                    <strong>Subject:</strong>
+                    <span style="background: #fff; border: 1px dashed #aaa; border-radius: 4px; padding: 2px 8px; font-family: monospace;">registration fee - [Your Name]</span>
+                  </li>
+                  <li><strong>Content should include:</strong>
+                    <ul style="margin-top: 8px; margin-left: 10px; list-style: none; padding: 0;">
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Payment Mode</li>
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Screenshot of the payment proof/receipt</li>
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Abstract ID (or N/A if no paper submitted)</li>
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Your full name</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <style>
+                @keyframes pulseAttention {
+                  0%   { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
+                  50%  { box-shadow: 0 0 28px 6px rgba(230, 57, 0, 0.45); }
+                  100% { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
+                }
+              </style>
             </div>
           </div>
 
