@@ -80,9 +80,226 @@
         <p>Please fill in all required fields marked with an asterisk</p>
       </div>
 
+      <div class="info-box">
+        <i class="fas fa-info-circle"></i>
+        <div class="info-box-content">
+          <p><strong>Payment Instructions:</strong></p>
+          <p>Registration is mandatory for all participants: invited speakers, contributed speakers, session chairs, poster presenters and those who wish to attend the sessions. All amounts indicated below are including GST.
+
+</p>
+          
+          <p style="margin-top: 15px; margin-bottom: 10px;"><strong>Registration Fee Structure:</strong></p>
+          <div class="table-scroll-wrapper">
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+            <tr >
+              <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Registration Type</th>
+              <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Amount (Rs.)</th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 10px;">Students/Research Scholars (Indian)</td>
+              <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3,000</td>
+            </tr>
+            <tr >
+              <td style="border: 1px solid #ddd; padding: 10px;">Faculty/Scientists/Research Staffs (Indian)</td>
+              <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 10px;">Postdoc</td>
+              <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
+            </tr>
+            <tr >
+              <td style="border: 1px solid #ddd; padding: 10px;">Industry</td>
+              <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10,000</td>
+            </tr>
+          </table>
+          </div>
+          
+          <p style="margin-top: 20px; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong style="font-size: 16px;">Payment Note for IPSC 2026 Conference</strong></p>
+          <p>Participants are requested to complete the payment for the IPSC 2026 Conference through the IIT Indore R&D online payment portal using the steps provided below:</p>
+          <p><strong>Step 1:</strong> Visit the website: <a href="https://rnd.iiti.ac.in/" target="_blank">https://rnd.iiti.ac.in/</a></p>
+          <p><strong>Step 2:</strong> Scroll to the bottom of the page and go to the Quick Links section.</p>
+          <p><strong>Step 3:</strong> Click on "Pay Registration Fee."</p>
+          <p>Kindly ensure that the payment is completed within the stipulated time.</p>
+          <p>After successful payment, participants are requested to share the payment receipt as per the instructions provided by the organizing committee.</p>
+          <p>Participants are also advised to keep a copy of the transaction receipt for future reference.</p>
+          
+          <div class="important-notice" style="
+            margin-top: 25px;
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+            border: 2px solid #f0a500;
+            border-left: 6px solid #e63900;
+            border-radius: 10px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18), 0 1px 4px rgba(0,0,0,0.08);
+            animation: pulseAttention 2s ease-in-out 3;
+            position: relative;
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              top: 10px;
+              right: 18px;
+              background: #e63900;
+              color: #fff;
+              font-size: 11px;
+              font-weight: 800;
+              letter-spacing: 1.5px;
+              padding: 4px 14px;
+              border-radius: 0 0 8px 8px;
+              text-transform: uppercase;
+            ">IMPORTANT</div>
+            <p style="font-size: 17px; font-weight: 800; color: #b30000; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 22px;">&#9888;&#65039;</span>
+              After Payment &amp; Form Submission
+            </p>
+            <p style="margin-bottom: 10px; color: #333;">
+              Please send an email to
+              <a href="mailto:ipsc2026@iiti.ac.in" style="color: #0056b3; font-weight: 700; text-decoration: underline;">ipsc2026@iiti.ac.in</a>
+              with the following details:
+            </p>
+            <ul style="margin-left: 20px; color: #222;">
+              <li style="margin-bottom: 6px;">
+                <strong>Subject:</strong>
+                <span style="background: #fff; border: 1px dashed #aaa; border-radius: 4px; padding: 2px 8px; font-family: monospace;">registration fee - [Your Name]</span>
+              </li>
+              <li><strong>Content should include:</strong>
+                <ul style="margin-top: 8px; margin-left: 10px; list-style: none; padding: 0;">
+                  <li style="padding: 4px 0;">&#10003;&nbsp; Payment Mode</li>
+                  <li style="padding: 4px 0;">&#10003;&nbsp; Screenshot of the payment proof/receipt</li>
+                  <li style="padding: 4px 0;">&#10003;&nbsp; Abstract ID (or N/A if no paper submitted)</li>
+                  <li style="padding: 4px 0;">&#10003;&nbsp; Your full name</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <style>
+            @keyframes pulseAttention {
+              0%   { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
+              50%  { box-shadow: 0 0 28px 6px rgba(230, 57, 0, 0.45); }
+              100% { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
+            }
+          </style>
+        </div>
+      </div>
+
       <form id="registrationForm" class="registration-form" novalidate>
         <input type="hidden" id="csrf_token" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
+
+        <!-- Payment Information Section
+        <div class="form-section">
+          <h3 class="section-title">
+            <i class="fas fa-credit-card"></i>
+            Payment Information
+          </h3>
+
+          <div class="info-box">
+            <i class="fas fa-info-circle"></i>
+            <div class="info-box-content">
+              <p><strong>Payment Instructions:</strong></p>
+              <p>Registration is mandatory for all participants: invited speakers, contributed speakers, session chairs, poster presenters and those who wish to attend the sessions. All amounts indicated below are including GST.
+
+</p>
+              
+              <p style="margin-top: 15px; margin-bottom: 10px;"><strong>Registration Fee Structure:</strong></p>
+              <div class="table-scroll-wrapper">
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+                <tr >
+                  <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Registration Type</th>
+                  <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Amount (Rs.)</th>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 10px;">Students/Research Scholars (Indian)</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3,000</td>
+                </tr>
+                <tr >
+                  <td style="border: 1px solid #ddd; padding: 10px;">Faculty/Scientists/Research Staffs (Indian)</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 10px;">Postdoc</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
+                </tr>
+                <tr >
+                  <td style="border: 1px solid #ddd; padding: 10px;">Industry</td>
+                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10,000</td>
+                </tr>
+              </table>
+              </div>
+              
+              <p style="margin-top: 20px; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong style="font-size: 16px;">Payment Note for IPSC 2026 Conference</strong></p>
+              <p>Participants are requested to complete the payment for the IPSC 2026 Conference through the IIT Indore R&D online payment portal using the steps provided below:</p>
+              <p><strong>Step 1:</strong> Visit the website: <a href="https://rnd.iiti.ac.in/" target="_blank">https://rnd.iiti.ac.in/</a></p>
+              <p><strong>Step 2:</strong> Scroll to the bottom of the page and go to the Quick Links section.</p>
+              <p><strong>Step 3:</strong> Click on "Pay Registration Fee."</p>
+              <p>Kindly ensure that the payment is completed within the stipulated time.</p>
+              <p>After successful payment, participants are requested to share the payment receipt as per the instructions provided by the organizing committee.</p>
+              <p>Participants are also advised to keep a copy of the transaction receipt for future reference.</p>
+              
+              <div class="important-notice" style="
+                margin-top: 25px;
+                background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+                border: 2px solid #f0a500;
+                border-left: 6px solid #e63900;
+                border-radius: 10px;
+                padding: 20px 24px;
+                box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18), 0 1px 4px rgba(0,0,0,0.08);
+                animation: pulseAttention 2s ease-in-out 3;
+                position: relative;
+                overflow: hidden;
+              ">
+                <div style="
+                  position: absolute;
+                  top: 10px;
+                  right: 18px;
+                  background: #e63900;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: 800;
+                  letter-spacing: 1.5px;
+                  padding: 4px 14px;
+                  border-radius: 0 0 8px 8px;
+                  text-transform: uppercase;
+                ">IMPORTANT</div>
+
+                <p style="font-size: 17px; font-weight: 800; color: #b30000; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 22px;">&#9888;&#65039;</span>
+                  Step 2: After Payment &amp; Form Submission
+                </p>
+
+                <p style="margin-bottom: 10px; color: #333;">
+                  Please send an email to
+                  <a href="mailto:ipsc2026@iiti.ac.in" style="color: #0056b3; font-weight: 700; text-decoration: underline;">ipsc2026@iiti.ac.in</a>
+                  with the following details:
+                </p>
+
+                <ul style="margin-left: 20px; color: #222;">
+                  <li style="margin-bottom: 6px;">
+                    <strong>Subject:</strong>
+                    <span style="background: #fff; border: 1px dashed #aaa; border-radius: 4px; padding: 2px 8px; font-family: monospace;">registration fee - [Your Name]</span>
+                  </li>
+                  <li><strong>Content should include:</strong>
+                    <ul style="margin-top: 8px; margin-left: 10px; list-style: none; padding: 0;">
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Payment Mode</li>
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Screenshot of the payment proof/receipt</li>
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Abstract ID (or N/A if no paper submitted)</li>
+                      <li style="padding: 4px 0;">&#10003;&nbsp; Your full name</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <style>
+                @keyframes pulseAttention {
+                  0%   { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
+                  50%  { box-shadow: 0 0 28px 6px rgba(230, 57, 0, 0.45); }
+                  100% { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
+                }
+              </style>
+            </div>
+          </div>
+
+        </div> -->
 
         <!-- Personal Information Section -->
         <div class="form-section">
@@ -216,179 +433,12 @@
           </div>
         </div>
 
-        <!-- Payment Information Section -->
+        <!-- Payment Form Fields Section -->
         <div class="form-section">
           <h3 class="section-title">
             <i class="fas fa-credit-card"></i>
-            Payment Information
+            Payment Details
           </h3>
-
-          <div class="info-box">
-            <i class="fas fa-info-circle"></i>
-            <div class="info-box-content">
-              <p><strong>Payment Instructions:</strong></p>
-              <p>Registration is mandatory for all participants: invited speakers, contributed speakers, session chairs, poster presenters and those who wish to attend the sessions. All amounts indicated below are including GST.
-
-</p>
-              
-              <p style="margin-top: 15px; margin-bottom: 10px;"><strong>Registration Fee Structure:</strong></p>
-              <div class="table-scroll-wrapper">
-              <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
-                <tr >
-                  <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Registration Type</th>
-                  <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Amount (Rs.)</th>
-                </tr>
-                <tr>
-                  <td style="border: 1px solid #ddd; padding: 10px;">Students/Research Scholars (Indian)</td>
-                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3,000</td>
-                </tr>
-                <tr >
-                  <td style="border: 1px solid #ddd; padding: 10px;">Faculty/Scientists/Research Staffs (Indian)</td>
-                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
-                </tr>
-                <tr>
-                  <td style="border: 1px solid #ddd; padding: 10px;">Postdoc</td>
-                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">6,500</td>
-                </tr>
-                <tr >
-                  <td style="border: 1px solid #ddd; padding: 10px;">Industry</td>
-                  <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10,000</td>
-                </tr>
-              </table>
-              </div>
-              
-              <p style="margin-top: 20px; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong style="font-size: 16px;">Step 1: Fee Payment</strong></p>
-              <p style="margin-bottom: 15px;"><strong>MODE OF PAYMENT of registration fee</strong></p>
-              
-              <div style="padding: 15px; border-left: 4px solid #007bff; margin-bottom: 20px;">
-                <p style="margin: 0 0 10px 0;"><strong>Mode 1: Payment through Paytm</strong></p>
-                <ol style="margin-top: 10px; padding-left: 20px;">
-                  <li>Please visit the home page of IIT Indore website.</li>
-                  <li>Go to PayTm link option in the facilities menu.</li>
-                  <li>In "select your Institute's area": go to Registration for events – select "workshop/conference".</li>
-                  <li>Select fee details: Participants may fill in the required details and proceed further. Please fill "IPSC 2026" for the title of the event.</li>
-                </ol>
-              </div>
-              
-              <div style="padding: 15px; border-left: 4px solid #28a745; margin-bottom: 20px;">
-                <p style="margin: 0 0 15px 0;"><strong>Mode 2: Payment through QR Code or UPI</strong></p>
-                <p>Scan the QR code or use the UPI ID given below to pay the registration fee.</p>
-                <div style="text-align: center; margin: 20px 0;">
-                  <img src="assets/qr.png" alt="QR Code for Payment" style="max-width: 250px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-                </div>
-              </div>
-              
-              <div style="padding: 15px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
-                <p style="margin: 0 0 15px 0;"><strong>Mode 3: Direct RTGS Payment</strong></p>
-                <p>Alternatively, you can pay through RTGS directly. Here are the details given below:</p>
-                <div class="table-scroll-wrapper">
-                <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold; width: 40%;">Name of account holder:</td>
-                    <td style="padding: 8px;">Registrar IIT Indore</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">Agency Name (CPMS):</td>
-                    <td style="padding: 8px;">Indian Institute of Technology Indore</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">Agency code (CPMS):</td>
-                    <td style="padding: 8px;">IITIND</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">Bank Name:</td>
-                    <td style="padding: 8px;">Canara Bank</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">Branch Name:</td>
-                    <td style="padding: 8px;">Simrol IIT Branch</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">Account Number:</td>
-                    <td style="padding: 8px;">1476101027440</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">Account Type:</td>
-                    <td style="padding: 8px;">Saving account</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">MICR Code:</td>
-                    <td style="padding: 8px;">452015026</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">IFSC Code:</td>
-                    <td style="padding: 8px;">CNRB0006223</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px; font-weight: bold;">SWIFT Code:</td>
-                    <td style="padding: 8px;">CNRBINBBISG</td>
-                  </tr>
-                </table>
-                </div>
-              </div>
-              
-              <div class="important-notice" style="
-                margin-top: 25px;
-                background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
-                border: 2px solid #f0a500;
-                border-left: 6px solid #e63900;
-                border-radius: 10px;
-                padding: 20px 24px;
-                box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18), 0 1px 4px rgba(0,0,0,0.08);
-                animation: pulseAttention 2s ease-in-out 3;
-                position: relative;
-                overflow: hidden;
-              ">
-                <div style="
-                  position: absolute;
-                  top: 10px;
-                  right: 18px;
-                  background: #e63900;
-                  color: #fff;
-                  font-size: 11px;
-                  font-weight: 800;
-                  letter-spacing: 1.5px;
-                  padding: 4px 14px;
-                  border-radius: 0 0 8px 8px;
-                  text-transform: uppercase;
-                ">IMPORTANT</div>
-
-                <p style="font-size: 17px; font-weight: 800; color: #b30000; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                  <span style="font-size: 22px;">&#9888;&#65039;</span>
-                  Step 2: After Payment &amp; Form Submission
-                </p>
-
-                <p style="margin-bottom: 10px; color: #333;">
-                  Please send an email to
-                  <a href="mailto:ipsc2026@iiti.ac.in" style="color: #0056b3; font-weight: 700; text-decoration: underline;">ipsc2026@iiti.ac.in</a>
-                  with the following details:
-                </p>
-
-                <ul style="margin-left: 20px; color: #222;">
-                  <li style="margin-bottom: 6px;">
-                    <strong>Subject:</strong>
-                    <span style="background: #fff; border: 1px dashed #aaa; border-radius: 4px; padding: 2px 8px; font-family: monospace;">registration fee - [Your Name]</span>
-                  </li>
-                  <li><strong>Content should include:</strong>
-                    <ul style="margin-top: 8px; margin-left: 10px; list-style: none; padding: 0;">
-                      <li style="padding: 4px 0;">&#10003;&nbsp; Payment Mode</li>
-                      <li style="padding: 4px 0;">&#10003;&nbsp; Screenshot of the payment proof/receipt</li>
-                      <li style="padding: 4px 0;">&#10003;&nbsp; Abstract ID (or N/A if no paper submitted)</li>
-                      <li style="padding: 4px 0;">&#10003;&nbsp; Your full name</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <style>
-                @keyframes pulseAttention {
-                  0%   { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
-                  50%  { box-shadow: 0 0 28px 6px rgba(230, 57, 0, 0.45); }
-                  100% { box-shadow: 0 4px 18px rgba(230, 57, 0, 0.18); }
-                }
-              </style>
-            </div>
-          </div>
 
           <div class="form-row">
             <div class="form-group">
