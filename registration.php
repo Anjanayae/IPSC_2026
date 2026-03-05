@@ -116,7 +116,7 @@
           
           <p style="margin-top: 20px; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong style="font-size: 16px;">Payment Note for IPSC 2026 Conference</strong></p>
           <p>Participants are requested to complete the payment for the IPSC 2026 Conference through the IIT Indore R&D online payment portal using the steps provided below:</p>
-          <p><strong>Step 1:</strong> Visit the website: <a href="https://rnd.iiti.ac.in/" target="_blank">https://rnd.iiti.ac.in/</a></p>
+          <p><strong>Step 1:</strong> Visit the website: <a href="https://rnd.iiti.ac.in/" style="color: #FFEBB0; text-decoration: underline;" target="_blank">https://rnd.iiti.ac.in/</a></p>
           <p><strong>Step 2:</strong> Scroll to the bottom of the page and go to the Quick Links section.</p>
           <p><strong>Step 3:</strong> Click on "Pay Registration Fee."</p>
           <p>Kindly ensure that the payment is completed within the stipulated time.</p>
