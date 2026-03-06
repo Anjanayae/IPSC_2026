@@ -625,70 +625,112 @@ header {
 
 /* ─── Hotels Container ─── */
 .hotels-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: none;
+}
+
+/* ─── Hotel Table ─── */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
     margin: 2rem 0 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
 }
 
-/* ─── Hotel Card ─── */
-.hotel-card {
-    background: rgba(255, 255, 255, 0.05);
+.hotels-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    transition: all 0.4s ease;
 }
 
-.hotel-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--nebula-pink);
-    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
-    background: rgba(255, 255, 255, 0.08);
+.hotels-table thead {
+    background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.25),
+        rgba(236, 72, 153, 0.15)
+    );
+    border-bottom: 2px solid rgba(99, 102, 241, 0.4);
 }
 
-.hotel-card h3 {
-    color: var(--nebula-pink);
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+.hotels-table th {
+    padding: 1.5rem;
+    text-align: left;
     font-weight: 700;
-    font-family: "Space Grotesk", sans-serif;
-}
-
-.hotel-details {
-    color: #cbd5e1;
-}
-
-.hotel-details p {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    color: #e2e8f0;
-}
-
-.hotel-details p strong {
     color: var(--nebula-pink);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-right: 1px solid rgba(99, 102, 241, 0.2);
 }
 
-.hotel-details ul {
+.hotels-table th:last-child {
+    border-right: none;
+}
+
+.hotels-table tbody tr {
+    border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+    transition: all 0.3s ease;
+}
+
+.hotels-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.1);
+    transform: scale(1.01);
+}
+
+.hotels-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.hotels-table td {
+    padding: 1.5rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    border-right: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.hotels-table td:last-child {
+    border-right: none;
+}
+
+.hotels-table td:first-child {
+    font-weight: 700;
+    color: var(--nebula-pink);
+    text-align: center;
+}
+
+.room-types {
     list-style: none;
     padding: 0;
-    margin: 0.5rem 0 1.5rem 0;
+    margin: 0;
 }
 
-.hotel-details ul li {
-    padding: 0.5rem 0 0.5rem 1.5rem;
+.room-types li {
+    padding: 0.4rem 0;
+    color: #e2e8f0;
+    font-size: 0.9rem;
     position: relative;
-    color: #cbd5e1;
-    font-size: 0.95rem;
+    padding-left: 1.2rem;
 }
 
-.hotel-details ul li::before {
-    content: "→";
+.room-types li::before {
     position: absolute;
     left: 0;
     color: var(--nebula-pink);
     font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.contact-cell {
+    font-weight: 700;
+    color: var(--nebula-pink);
+    text-align: center;
+}
+
+/* ─── Hotel Card (deprecated - hidden) ─── */
+.hotel-card {
+    display: none;
 }
 
 /* ─── Bus Route Note ─── */
@@ -1051,27 +1093,34 @@ footer {
     }
 
     /* ─── Hotel Cards Mobile ─── */
-    .hotels-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .table-wrapper {
         margin: 1.5rem 0 2rem;
+        border-radius: 12px;
+        overflow-x: auto;
     }
 
-    .hotel-card {
-        padding: 1.5rem;
-    }
-
-    .hotel-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .hotel-details p {
+    .hotels-table {
+        width: 100%;
         font-size: 0.9rem;
     }
 
-    .hotel-details ul li {
+    .hotels-table th {
+        padding: 1rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .hotels-table td {
+        padding: 1rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .room-types li {
+        font-size: 0.8rem;
+        padding: 0.3rem 0 0.3rem 1rem;
+    }
+
+    .contact-cell {
         font-size: 0.9rem;
-        padding: 0.4rem 0 0.4rem 1.25rem;
     }
 
     /* ─── Bus Route Note Mobile ─── */
@@ -1164,34 +1213,35 @@ footer {
     }
 
     /* ─── Hotel Cards ─── */
-    .hotels-container {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
+    .table-wrapper {
         margin: 1.5rem 0 2rem;
+        border-radius: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .hotel-card {
-        padding: 1.25rem;
-        border-radius: 16px;
+    .hotels-table {
+        font-size: 0.8rem;
+        min-width: 100%;
     }
 
-    .hotel-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
+    .hotels-table th {
+        padding: 0.8rem 0.6rem;
+        font-size: 0.75rem;
     }
 
-    .hotel-details p {
-        font-size: 0.85rem;
-        margin-bottom: 0.75rem;
+    .hotels-table td {
+        padding: 0.8rem 0.6rem;
+        font-size: 0.8rem;
     }
 
-    .hotel-details ul {
-        margin: 0.5rem 0 1rem 0;
+    .room-types li {
+        font-size: 0.75rem;
+        padding: 0.25rem 0 0.25rem 0.9rem;
     }
 
-    .hotel-details ul li {
-        font-size: 0.85rem;
-        padding: 0.35rem 0 0.35rem 1.1rem;
+    .contact-cell {
+        font-size: 0.8rem;
     }
 
     /* ─── Bus Route Note ─── */
@@ -1292,39 +1342,41 @@ footer {
     }
 
     /* ─── Hotel Cards Extra Small ─── */
-    .hotels-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .table-wrapper {
         margin: 1.25rem 0 1.75rem;
+        border-radius: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .hotel-card {
-        padding: 1rem 0.75rem;
-        border-radius: 14px;
-        margin: 0 0.75rem;
+    .hotels-table {
+        font-size: 0.75rem;
+        min-width: 100%;
     }
 
-    .hotel-card h3 {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
+    .hotels-table th {
+        padding: 0.6rem 0.4rem;
+        font-size: 0.7rem;
+        word-break: break-word;
     }
 
-    .hotel-details p {
-        font-size: 0.8rem;
-        margin-bottom: 0.6rem;
+    .hotels-table td {
+        padding: 0.6rem 0.4rem;
+        font-size: 0.75rem;
     }
 
-    .hotel-details ul {
-        margin: 0.4rem 0 0.8rem 0;
+    .room-types {
+        margin: 0;
     }
 
-    .hotel-details ul li {
-        font-size: 0.8rem;
-        padding: 0.3rem 0 0.3rem 1rem;
+    .room-types li {
+        font-size: 0.7rem;
+        padding: 0.2rem 0 0.2rem 0.8rem;
     }
 
-    .hotel-details ul li::before {
-        font-size: 0.9rem;
+    .contact-cell {
+        font-size: 0.73rem;
+        font-weight: 700;
     }
 
     /* ─── Bus Route Note Extra Small ─── */
